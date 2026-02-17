@@ -3,44 +3,162 @@ export type Language = 'en' | 'th';
 export const translations = {
   en: {
     hero: {
-      greeting: "Hey, I’m Ratchanon.",
-      role: "A Software Developer who bridges complex Backend logic with Pixel-Perfect Frontend.",
-      description: "Specialized in Next.js, AI Integration, and building scalable web applications.",
+      greeting: "Hi, I’m Ratchanon.",
+      role: "Frontend Developer turning Figma concepts into responsive, production-ready web interfaces.",
+      description: "Focused on component modularity, type-safe integration, and building real-time dashboards with Next.js & Tailwind.",
       downloadResume: "Download Resume",
+    },
+    expertise: {
+      title: "Core Capabilities",
+      items: {
+        design: {
+          title: "Design Engineering",
+          desc: "Bridging the gap between design and code. Translating Figma to pixel-perfect, accessible UI."
+        },
+        interactive: {
+          title: "Interactive Data",
+          desc: "Building complex dashboards using HTML5 Canvas, D3/ApexCharts, and WebSockets."
+        },
+        architecture: {
+          title: "Scalable Architecture",
+          desc: "Crafting modular, type-safe codebases with Next.js, emphasizing performance and maintainability."
+        }
+      }
     },
     projects: {
       traffix: {
         title: "Traffix",
-        description: "Smart Parking AI Platform – Next.js & Python",
+        description: "Visualizing parking slots via HTML5 Canvas with real-time WebSocket updates.",
       },
       warehouse: {
-        title: "Warehouse System",
-        description: "Real-time Inventory System – WebSocket & NestJS",
+        title: "Warehouse OS",
+        description: "Optimizing large data sets with virtualized lists and complex state management.",
       }
     },
+    experience: {
+      title: "Experience",
+      jobs: [
+        {
+          role: "Software Developer",
+          company: "BBTV New Media",
+          period: "Jun 2025 – Present",
+          details: [
+            "Developed responsive, component-driven dashboards using Next.js and Tailwind CSS.",
+            "Implemented real-time data visualization connecting WebSocket streams to React state.",
+            "Collaborated with designers to deliver accessible interfaces for AI-powered Smart Parking and Warehouse systems."
+          ]
+        },
+        {
+          role: "Software Developer Intern",
+          company: "Banana Coding",
+          period: "Nov 2024 – Feb 2025",
+          details: [
+            "Constructed interactive analytics dashboards using ApexCharts and Angular.",
+            "Engineered frontend validation logic for bulk Excel data imports.",
+            "Established strict linting rules and unit testing patterns to ensure code maintainability."
+          ]
+        }
+      ],
+      education: {
+        title: "Education",
+        degree: "B.Eng. Computer Engineering",
+        university: "Rajamangala University of Technology Lanna",
+        gpa: "3.29",
+        period: "2021 – 2025"
+      }
+    },
+    contact: {
+      title: "Get in Touch",
+      cta: "Open to frontend roles and collaboration opportunities.",
+      email: "Email Me",
+      resume: "Download Resume",
+      linkedin: "LinkedIn",
+      github: "GitHub",
+      phone: "Phone",
+      location: "Location"
+    },
     common: {
-      viewProject: "View Project"
+      viewProject: "View Case Study"
     }
   },
   th: {
     hero: {
-      greeting: "สวัสดีครับ, ผม รัชชานนท์",
-      role: "นักพัฒนาซอฟต์แวร์ผู้เชื่อมโยงตรรกะ Backend ที่ซับซ้อนเข้ากับ Frontend ที่สวยงาม",
-      description: "เชียวชาญด้าน Next.js, AI Integration และการสร้าง Web Application ที่รองรับการขยายตัว",
+      greeting: "สวัสดีครับ ผมรัชชานนท์",
+      role: "Frontend Developer ผู้เชี่ยวชาญการแปลงดีไซน์ Figma เป็นเว็บไซต์ที่พร้อมใช้งานจริง",
+      description: "เน้นการเขียนโค้ดแบบ Modular, Type-safe และการเชื่อมต่อข้อมูล Real-time ด้วย Next.js และ Tailwind",
       downloadResume: "ดาวน์โหลดเรซูเม่",
+    },
+    expertise: {
+      title: "ความสามารถหลัก",
+      items: {
+        design: {
+          title: "Design Engineering",
+          desc: "เปลี่ยนงานออกแบบจาก Figma เป็นโค้ดที่สวยงามและใช้งานได้จริง (Pixel-perfect)"
+        },
+        interactive: {
+          title: "Interactive Data",
+          desc: "พัฒนา Dashboard ซับซ้อนด้วย HTML5 Canvas และการเชื่อมต่อข้อมูล Real-time"
+        },
+        architecture: {
+          title: "Scalable Architecture",
+          desc: "เขียนโค้ดแบบ Modular เน้นดูแลรักษาง่ายและรองรับการขยายตัวด้วย Next.js"
+        }
+      }
     },
     projects: {
       traffix: {
         title: "Traffix",
-        description: "ระบบจอดรถอัจฉริยะด้วย AI – Next.js & Python",
+        description: "วาดผังที่จอดรถด้วย HTML5 Canvas และแสดงสถานะ Real-time ผ่าน WebSocket",
       },
       warehouse: {
-        title: "Warehouse System",
-        description: "ระบบจัดการสต็อกสินค้าแบบเรียลไทม์ – WebSocket & NestJS",
+        title: "Warehouse OS",
+        description: "ใช้ Virtualized Lists จัดการข้อมูลขนาดใหญ่ และจัดการ State ที่ซับซ้อน",
       }
     },
+    experience: {
+      title: "ประสบการณ์ทำงาน",
+      jobs: [
+        {
+          role: "Software Developer",
+          company: "BBTV New Media",
+          period: "มิ.ย. 2025 – ปัจจุบัน",
+          details: [
+            "พัฒนา Dashboard แบบ Component-driven ด้วย Next.js และ Tailwind CSS",
+            "เชื่อมต่อ WebSocket เข้ากับ React State เพื่อแสดงผลข้อมูล Real-time อย่างลื่นไหล",
+            "ทำงานร่วมกับทีมดีไซน์เพื่อสร้าง Interface สำหรับระบบ Smart Parking และ Warehouse AI"
+          ]
+        },
+        {
+          role: "Software Developer Intern",
+          company: "Banana Coding",
+          period: "พ.ย. 2024 – ก.พ. 2025",
+          details: [
+            "สร้าง Dashboard แสดงผลข้อมูลเชิงลึกแบบ Interactive ด้วย ApexCharts และ Angular",
+            "พัฒนาระบบ Validation ตรวจสอบข้อมูล Excel ฝั่ง Frontend ก่อนอัปโหลด",
+            "กำหนดมาตรฐาน Code Quality ด้วยการทำ Linting และ Unit Testing"
+          ]
+        }
+      ],
+      education: {
+        title: "การศึกษา",
+        degree: "วิศวกรรมคอมพิวเตอร์ (ปริญญาตรี)",
+        university: "มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา",
+        gpa: "3.29",
+        period: "2021 – 2025"
+      }
+    },
+    contact: {
+      title: "ติดต่อ",
+      cta: "เปิดรับโอกาสร่วมงานด้าน Frontend และการพัฒนาโปรเจกต์",
+      email: "ส่งอีเมล",
+      resume: "ดาวน์โหลดเรซูเม่",
+      linkedin: "LinkedIn",
+      github: "GitHub",
+      phone: "เบอร์โทรศัพท์",
+      location: "ที่อยู่"
+    },
     common: {
-      viewProject: "ดูโปรเจกต์"
+      viewProject: "ดูรายละเอียด"
     }
   }
 };

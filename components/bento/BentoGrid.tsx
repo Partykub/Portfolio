@@ -2,9 +2,11 @@
 
 import { motion, Variants } from "framer-motion";
 import { HeroCard } from "./HeroCard";
-import { ProfileCard } from "./ProfileCard";
 import { SkillsMarquee } from "./SkillsMarquee";
 import { ProjectCard } from "./ProjectCard";
+import { TechnicalExpertiseCard } from "./FrontendHighlightsCard";
+import { ExperienceCard } from "./ExperienceCard";
+import { ContactCard } from "./ContactCard";
 import { useLanguage } from "@/app/context/LanguageContext";
 
 const container: Variants = {
@@ -39,18 +41,19 @@ export function BentoGrid() {
             variants={container}
             initial="hidden"
             animate="show"
-            className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 md:p-6 lg:p-8 max-w-7xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 p-4 md:p-8 max-w-7xl mx-auto pb-24"
         >
-            {/* Row 1: Hero (2/3) + Profile (1/3) */}
-            <motion.div variants={item} className="md:col-span-2 row-span-2">
+            {/* Row 1: Hero (Full Width) */}
+            <motion.div variants={item} className="md:col-span-3 mb-8 md:mb-12">
                 <HeroCard />
             </motion.div>
 
-            <motion.div variants={item} className="md:col-span-1 row-span-2 h-full">
-                <ProfileCard />
+            {/* Row 2: Core Capabilities (Full Width) */}
+            <motion.div variants={item} className="md:col-span-3">
+                <TechnicalExpertiseCard />
             </motion.div>
 
-            {/* Row 2: Skills (Full Width) */}
+            {/* Row 3: Skills (Full Width) */}
             <motion.div variants={item} className="md:col-span-3">
                 <SkillsMarquee />
             </motion.div>
@@ -74,6 +77,16 @@ export function BentoGrid() {
                     image="/warehouse-ui.png"
                     link="#"
                 />
+            </motion.div>
+
+            {/* Row 4: Experience */}
+            <motion.div variants={item} className="md:col-span-3">
+                <ExperienceCard />
+            </motion.div>
+
+            {/* Row 5: Contact */}
+            <motion.div variants={item} className="md:col-span-3">
+                <ContactCard />
             </motion.div>
         </motion.div>
     );
