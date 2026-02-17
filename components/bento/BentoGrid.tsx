@@ -5,6 +5,7 @@ import { HeroCard } from "./HeroCard";
 import { ProfileCard } from "./ProfileCard";
 import { SkillsMarquee } from "./SkillsMarquee";
 import { ProjectCard } from "./ProjectCard";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 const container: Variants = {
     hidden: { opacity: 0 },
@@ -31,6 +32,8 @@ const item: Variants = {
 };
 
 export function BentoGrid() {
+    const { t } = useLanguage();
+
     return (
         <motion.div
             variants={container}
@@ -55,22 +58,20 @@ export function BentoGrid() {
             {/* Row 3: Projects */}
             <motion.div variants={item} className="md:col-span-2">
                 <ProjectCard
-                    title="Traffix"
-                    description="Smart Parking AI Platform – Next.js & Python"
+                    title={t.projects.traffix.title}
+                    description={t.projects.traffix.description}
                     tags={["Next.js", "Python", "AI", "Dashboard"]}
                     image="/traffix-dashboard.png"
-                    theme="dark"
                     link="#"
                 />
             </motion.div>
 
             <motion.div variants={item} className="md:col-span-1">
                 <ProjectCard
-                    title="Warehouse System"
-                    description="Real-time Inventory System – WebSocket & NestJS"
+                    title={t.projects.warehouse.title}
+                    description={t.projects.warehouse.description}
                     tags={["NestJS", "WebSocket", "Real-time"]}
                     image="/warehouse-ui.png"
-                    theme="light" // Light theme as per request (or default)
                     link="#"
                 />
             </motion.div>
