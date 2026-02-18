@@ -17,6 +17,22 @@ const skills = [
     { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-300" }
 ];
 
+const SkillList = ({ keyPrefix }: { keyPrefix: string }) => (
+    <>
+        {skills.map((skill, i) => (
+            <div
+                key={`${keyPrefix}-${i}`}
+                className="flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-secondary/50 hover:bg-secondary hover:border-primary/20 transition-all duration-300 select-none cursor-pointer hover:scale-110 hover:shadow-[0_0_15px_rgba(var(--primary),0.3)]"
+            >
+                <skill.icon className={cn("w-5 h-5 transition-transform", skill.color)} />
+                <span className="text-sm font-medium text-foreground/80 group-hover:text-foreground transition-colors">
+                    {skill.name}
+                </span>
+            </div>
+        ))}
+    </>
+);
+
 export function SkillsMarquee() {
     return (
         <div className="relative flex overflow-hidden bg-background border border-border rounded-2xl p-4 md:p-6 w-full items-center">
@@ -24,42 +40,14 @@ export function SkillsMarquee() {
             <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-background to-transparent z-10" />
             <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-background to-transparent z-10" />
 
-            <div className="flex animate-marquee whitespace-nowrap gap-8 items-center">
-                {skills.map((skill, i) => (
-                    <div
-                        key={`skill-${i}`}
-                        className="flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-secondary/50 hover:bg-secondary hover:border-primary/20 transition-all select-none group"
-                    >
-                        <skill.icon className={cn("w-5 h-5", skill.color, "grayscale group-hover:grayscale-0 transition-all duration-300")} />
-                        <span className="text-sm font-medium text-foreground/80 group-hover:text-foreground transition-colors">
-                            {skill.name}
-                        </span>
-                    </div>
-                ))}
-                {/* Duplicate for infinite loop */}
-                {skills.map((skill, i) => (
-                    <div
-                        key={`skill-dup-${i}`}
-                        className="flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-secondary/50 hover:bg-secondary hover:border-primary/20 transition-all select-none group"
-                    >
-                        <skill.icon className={cn("w-5 h-5", skill.color, "grayscale group-hover:grayscale-0 transition-all duration-300")} />
-                        <span className="text-sm font-medium text-foreground/80 group-hover:text-foreground transition-colors">
-                            {skill.name}
-                        </span>
-                    </div>
-                ))}
-                {/* Triplicate for wider screens to ensure loop no matter the screen width */}
-                {skills.map((skill, i) => (
-                    <div
-                        key={`skill-trip-${i}`}
-                        className="flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-secondary/50 hover:bg-secondary hover:border-primary/20 transition-all select-none group"
-                    >
-                        <skill.icon className={cn("w-5 h-5", skill.color, "grayscale group-hover:grayscale-0 transition-all duration-300")} />
-                        <span className="text-sm font-medium text-foreground/80 group-hover:text-foreground transition-colors">
-                            {skill.name}
-                        </span>
-                    </div>
-                ))}
+            {/* Seamless Marquee Container */}
+            <div className="flex w-full overflow-hidden mask-linear-gradient select-none group">
+                <div className="flex animate-marquee flex-shrink-0 whitespace-nowrap gap-8 items-center min-w-full justify-start pr-8 group-hover:[animation-play-state:paused]">
+                    <SkillList keyPrefix="skill" />
+                </div>
+                <div className="flex animate-marquee flex-shrink-0 whitespace-nowrap gap-8 items-center min-w-full justify-start pr-8 group-hover:[animation-play-state:paused]" aria-hidden="true">
+                    <SkillList keyPrefix="skill-dup" />
+                </div>
             </div>
         </div>
     )

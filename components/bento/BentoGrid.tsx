@@ -41,7 +41,7 @@ export function BentoGrid() {
             variants={container}
             initial="hidden"
             animate="show"
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 p-4 md:p-8 max-w-7xl mx-auto pb-24"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 p-6 md:p-12 max-w-7xl mx-auto pb-24"
         >
             {/* Row 1: Hero (Full Width) */}
             <motion.div variants={item} className="md:col-span-3 mb-8 md:mb-12">

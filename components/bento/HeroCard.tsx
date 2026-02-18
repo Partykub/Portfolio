@@ -27,38 +27,9 @@ export function HeroCard() {
     };
 
     return (
-        <Card className="col-span-1 md:col-span-3 bg-gradient-to-br from-blue-500/5 to-orange-500/5 border-none relative overflow-hidden h-full flex flex-col justify-center min-h-[400px]">
+        <Card className="col-span-1 md:col-span-3 bg-card border-none relative overflow-hidden h-full flex flex-col justify-center min-h-[400px] shadow-sm group">
             {/* Background Grid */}
             <div className="absolute top-0 left-0 w-full h-full bg-grid-black/[0.02] dark:bg-grid-white/[0.02] -z-10 rounded-xl" />
-
-            {/* Aurora Background Effect */}
-            <motion.div
-                className="absolute -top-20 -left-20 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl -z-10"
-                animate={{
-                    scale: [1, 1.2, 1],
-                    x: [0, 30, 0],
-                    y: [0, 20, 0],
-                }}
-                transition={{
-                    duration: 8,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                }}
-            />
-            <motion.div
-                className="absolute top-1/2 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl -z-10"
-                animate={{
-                    scale: [1, 1.1, 1],
-                    x: [0, -20, 0],
-                    opacity: [0.3, 0.5, 0.3]
-                }}
-                transition={{
-                    duration: 10,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1
-                }}
-            />
 
             <CardContent className="flex flex-col-reverse md:flex-row items-center justify-between p-8 md:p-12 lg:p-16 gap-8 md:gap-12 max-w-6xl mx-auto w-full relative z-10">
 
@@ -113,12 +84,12 @@ export function HeroCard() {
 
                 {/* Right: Profile Image */}
                 <motion.div
-                    className="relative flex-shrink-0 group"
+                    className="relative flex-shrink-0"
                     initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
                     animate={{ opacity: 1, scale: 1, rotate: 0 }}
                     transition={{ duration: 0.8, ease: "backOut", delay: 0.2 }}
                 >
-                    <div className="w-48 h-48 md:w-72 md:h-72 rounded-3xl border-4 border-background shadow-2xl overflow-hidden relative z-10 transition-transform duration-500 hover:scale-105 bg-muted rotate-3 hover:rotate-0">
+                    <div className="w-48 h-48 md:w-72 md:h-72 rounded-3xl border-4 border-background shadow-2xl overflow-hidden relative z-10 transition-transform duration-500 group-hover:scale-105 bg-muted rotate-3 group-hover:rotate-0">
                         <Image
                             src="/profile_background.png"
                             alt="Ratchanon Profile"
