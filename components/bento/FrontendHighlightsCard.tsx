@@ -52,7 +52,7 @@ export function TechnicalExpertiseCard() {
                         {/* Decorative Gradient Background */}
                         <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br ${item.gradient} rounded-2xl -z-10`} />
 
-                        <div className="space-y-4">
+                        {/* <div className="space-y-4">
                             <div className={`w-12 h-12 rounded-xl bg-background border border-border/50 flex items-center justify-center shadow-sm ${item.iconColor} group-hover:scale-110 transition-transform duration-300`}>
                                 <item.icon className="w-6 h-6" />
                             </div>
@@ -65,7 +65,7 @@ export function TechnicalExpertiseCard() {
                                     {item.desc}
                                 </p>
                             </div>
-                        </div>
+                        </div> */}
 
                         <div className="mt-6 pt-4 border-t border-border/50 flex justify-end">
                             <ArrowRight className="w-5 h-5 text-muted-foreground/50 group-hover:text-primary group-hover:translate-x-1 transition-all" />

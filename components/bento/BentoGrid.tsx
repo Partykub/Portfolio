@@ -48,11 +48,6 @@ export function BentoGrid() {
                 <HeroCard />
             </motion.div>
 
-            {/* Row 2: Core Capabilities (Full Width) */}
-            <motion.div variants={item} className="md:col-span-3">
-                <TechnicalExpertiseCard />
-            </motion.div>
-
             {/* Row 3: Skills (Full Width) */}
             <motion.div variants={item} className="md:col-span-3">
                 <SkillsMarquee />
@@ -61,21 +56,21 @@ export function BentoGrid() {
             {/* Row 3: Projects */}
             <motion.div variants={item} className="md:col-span-2">
                 <ProjectCard
-                    title={t.projects.traffix.title}
-                    description={t.projects.traffix.description}
-                    tags={["Next.js", "Python", "AI", "Dashboard"]}
-                    image="/traffix-dashboard.png"
-                    link="#"
+                    title={t.projects.careos.title}
+                    description={t.projects.careos.description}
+                    tags={["PHP", "jQuery", "HTML5", "CSS3", "MySQL", "76 Pages", "28 Modules"]}
+                    image="/projects/careos-preview.png"
+                    link="http://localhost:8081"
                 />
             </motion.div>
 
             <motion.div variants={item} className="md:col-span-1">
                 <ProjectCard
-                    title={t.projects.warehouse.title}
-                    description={t.projects.warehouse.description}
-                    tags={["NestJS", "WebSocket", "Real-time"]}
-                    image="/warehouse-ui.png"
-                    link="#"
+                    title={t.projects.smartdashboard.title}
+                    description={t.projects.smartdashboard.description}
+                    tags={["PHP", "ApexCharts", "AI/ML", "Real-time", "KPI"]}
+                    image="/projects/smartdashboard-preview.png"
+                    link="http://localhost:8082"
                 />
             </motion.div>
 

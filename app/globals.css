@@ -34,7 +34,7 @@
     }
   }
 
-  --animate-marquee: marquee 10s linear infinite;
+  --animate-marquee: marquee 20s linear infinite;
 }
 
 @layer base {

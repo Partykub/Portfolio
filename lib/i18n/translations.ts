@@ -13,7 +13,7 @@ export const translations = {
       items: {
         design: {
           title: "Design Engineering",
-          desc: "Bridging the gap between design and code. Translating Figma to pixel-perfect, accessible UI."
+          desc: "Bridging the gap between design and code. Translating Figma to pixel-perfect UI using HTML5, CSS3, and jQuery."
         },
         interactive: {
           title: "Interactive Data",
@@ -26,13 +26,13 @@ export const translations = {
       }
     },
     projects: {
-      traffix: {
-        title: "Traffix",
-        description: "Visualizing parking slots via HTML5 Canvas with real-time WebSocket updates.",
+      careos: {
+        title: "CareOS",
+        description: "Full-cycle Hospital Management System redesigned from legacy HOSxP. Covers EMR, doctor examination, pharmacy queue with drug allergy alerts, and real-time billing.",
       },
-      warehouse: {
-        title: "Warehouse OS",
-        description: "Optimizing large data sets with virtualized lists and complex state management.",
+      smartdashboard: {
+        title: "SmartDashboard",
+        description: "Executive-grade hospital dashboard with AI Predictive Analytics (91% accuracy), real-time Command Center monitoring 420+ patients, and KPI alert system.",
       }
     },
     experience: {
@@ -44,6 +44,7 @@ export const translations = {
           period: "Jun 2025 – Present",
           details: [
             "Developed responsive, component-driven dashboards using Next.js and Tailwind CSS.",
+            "Built pixel-perfect, fully responsive UI components using HTML5 and CSS3, ensuring consistent rendering across browsers.",
             "Implemented real-time data visualization connecting WebSocket streams to React state.",
             "Collaborated with designers to deliver accessible interfaces for AI-powered Smart Parking and Warehouse systems."
           ]
@@ -93,7 +94,7 @@ export const translations = {
       items: {
         design: {
           title: "Design Engineering",
-          desc: "เปลี่ยนงานออกแบบจาก Figma เป็นโค้ดที่สวยงามและใช้งานได้จริง (Pixel-perfect)"
+          desc: "เปลี่ยนงานออกแบบจาก Figma เป็นโค้ด Pixel-perfect ด้วย HTML5, CSS3 และ jQuery"
         },
         interactive: {
           title: "Interactive Data",
@@ -106,13 +107,13 @@ export const translations = {
       }
     },
     projects: {
-      traffix: {
-        title: "Traffix",
-        description: "วาดผังที่จอดรถด้วย HTML5 Canvas และแสดงสถานะ Real-time ผ่าน WebSocket",
+      careos: {
+        title: "CareOS",
+        description: "ระบบจัดการโรงพยาบาลครบวงจร รีดีไซน์จาก HOSxP ให้ทันสมัย ครอบคลุมเวชระเบียน ห้องตรวจ ระบบคิวยาพร้อมแจ้งเตือนอาการแพ้ และการเงิน",
       },
-      warehouse: {
-        title: "Warehouse OS",
-        description: "ใช้ Virtualized Lists จัดการข้อมูลขนาดใหญ่ และจัดการ State ที่ซับซ้อน",
+      smartdashboard: {
+        title: "SmartDashboard",
+        description: "Dashboard ผู้บริหารโรงพยาบาล มี AI คาดการณ์ผู้ป่วย (ความแม่นยำ 91%) Command Center ติดตามผู้ป่วย 420+ คน Real-time และระบบแจ้งเตือน KPI วิกฤต",
       }
     },
     experience: {
@@ -124,6 +125,7 @@ export const translations = {
           period: "มิ.ย. 2025 – ปัจจุบัน",
           details: [
             "พัฒนา Dashboard แบบ Component-driven ด้วย Next.js และ Tailwind CSS",
+            "สร้าง UI ที่สวยงามและรองรับ Responsive เต็มรูปแบบด้วย HTML5 และ CSS3",
             "เชื่อมต่อ WebSocket เข้ากับ React State เพื่อแสดงผลข้อมูล Real-time อย่างลื่นไหล",
             "ทำงานร่วมกับทีมดีไซน์เพื่อสร้าง Interface สำหรับระบบ Smart Parking และ Warehouse AI"
           ]
