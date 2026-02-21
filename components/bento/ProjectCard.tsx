@@ -1,6 +1,5 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
@@ -53,95 +52,91 @@ export function ProjectCard({
     }
 
     return (
-        <motion.div
-            className={cn("h-full perspective-1000", className)}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            style={{
-                perspective: 1000
-            }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-        >
+        <Link href={link} className="block">
             <motion.div
+                className={cn("perspective-1000", className)}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
                 style={{
-                    rotateX,
-                    rotateY,
-                    transformStyle: "preserve-3d"
+                    perspective: 1000
                 }}
-                className={cn(
-                    "group relative flex flex-col justify-between overflow-hidden transition-all hover:shadow-2xl rounded-xl h-full",
-                    "bg-card border-border text-card-foreground border"
-                )}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
             >
-                {/* Content */}
-                <div className="p-6 relative z-10 bg-card/50 backdrop-blur-sm h-full flex flex-col justify-between" style={{ transform: "translateZ(20px)" }}>
-                    <div>
+                <motion.div
+                    style={{
+                        rotateX,
+                        rotateY,
+                        transformStyle: "preserve-3d"
+                    }}
+                    className={cn(
+                        "group relative flex flex-col overflow-hidden transition-all hover:shadow-2xl rounded-xl",
+                        "bg-card border-border text-card-foreground border"
+                    )}
+                >
+                    {/* Content Section */}
+                    <div className="p-6 relative z-10 bg-card" style={{ transform: "translateZ(20px)" }}>
                         <div className="flex justify-between items-start mb-4">
-                            <div className="space-y-2">
-                                <h3 className={cn("text-2xl font-bold font-heading", "text-foreground")}>
+                            <div className="space-y-2 flex-1">
+                                <h3 className="text-2xl font-bold font-heading text-foreground">
                                     {title}
                                 </h3>
-                                <p className={cn("text-sm max-w-[200px] md:max-w-xs", "text-muted-foreground")}>
+                                <p className="text-sm text-muted-foreground line-clamp-2">
                                     {description}
                                 </p>
                             </div>
-                            <Link
-                                href={link}
+                            <div
                                 className={cn(
-                                    "p-2 rounded-full transition-transform group-hover:-translate-y-1 group-hover:translate-x-1",
-                                    "bg-primary/10 hover:bg-primary/20 text-primary" // Fixed: Removed isDark check
+                                    "p-2 rounded-full transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 flex-shrink-0",
+                                    "bg-primary/10 hover:bg-primary/20 text-primary"
                                 )}
                                 aria-label={`View ${title}`}
                             >
                                 <ArrowUpRight className="w-5 h-5" />
-                            </Link>
+                            </div>
                         </div>
 
-                        <div className="flex flex-wrap gap-2 mb-6">
+                        <div className="flex flex-wrap gap-2">
                             {tags.map((tag) => (
                                 <Badge
                                     key={tag}
-                                    variant="secondary" // Fixed: Use standard secondary variant
-                                    className="" // Fixed: Removed manual styling based on isDark
+                                    variant="secondary"
+                                    className="text-xs"
                                 >
                                     {tag}
                                 </Badge>
                             ))}
                         </div>
                     </div>
-                </div>
 
-                {/* Image */}
-                <div className="relative w-full h-64 md:h-80 mt-auto overflow-hidden rounded-b-xl" style={{ transform: "translateZ(10px)" }}>
-                    {/* Gradient Overlay for better text readability */}
-                    <div className={cn("absolute inset-0 z-10 bg-gradient-to-t from-background/20 to-transparent")} />
+                    {/* Image Section - Aspect ratio based on content */}
+                    <div className="relative w-full aspect-video overflow-hidden bg-muted/20" style={{ transform: "translateZ(10px)" }}>
+                        <Image
+                            src={image}
+                            alt={title}
+                            fill
+                            className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 50vw"
+                        />
+                    </div>
 
-                    <Image
-                        src={image}
-                        alt={title}
-                        fill
-                        className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-110"
-                        sizes="(max-width: 768px) 100vw, 50vw"
+                    {/* Shine/Glare Effect */}
+                    <motion.div
+                        className="absolute inset-0 z-50 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        style={{
+                            background: useTransform(
+                                mouseX,
+                                [-0.5, 0.5],
+                                [
+                                    "radial-gradient(circle at 0% 0%, rgba(255,255,255,0.1) 0%, transparent 50%)",
+                                    "radial-gradient(circle at 100% 100%, rgba(255,255,255,0.1) 0%, transparent 50%)"
+                                ]
+                            )
+                        }}
                     />
-                </div>
-
-                {/* Shine/Glare Effect */}
-                <motion.div
-                    className="absolute inset-0 z-50 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                    style={{
-                        background: useTransform(
-                            mouseX,
-                            [-0.5, 0.5],
-                            [
-                                "radial-gradient(circle at 0% 0%, rgba(255,255,255,0.1) 0%, transparent 50%)",
-                                "radial-gradient(circle at 100% 100%, rgba(255,255,255,0.1) 0%, transparent 50%)"
-                            ]
-                        )
-                    }}
-                />
+                </motion.div>
             </motion.div>
-        </motion.div>
+        </Link>
     );
 }

@@ -53,25 +53,24 @@ export function BentoGrid() {
                 <SkillsMarquee />
             </motion.div>
 
-            {/* Row 3: Projects */}
-            <motion.div variants={item} className="md:col-span-2">
-                <ProjectCard
-                    title={t.projects.careos.title}
-                    description={t.projects.careos.description}
-                    tags={["PHP", "jQuery", "HTML5", "CSS3", "MySQL", "76 Pages", "28 Modules"]}
-                    image="/projects/careos-preview.png"
-                    link="http://localhost:8081"
-                />
-            </motion.div>
-
-            <motion.div variants={item} className="md:col-span-1">
-                <ProjectCard
-                    title={t.projects.smartdashboard.title}
-                    description={t.projects.smartdashboard.description}
-                    tags={["PHP", "ApexCharts", "AI/ML", "Real-time", "KPI"]}
-                    image="/projects/smartdashboard-preview.png"
-                    link="http://localhost:8082"
-                />
+            {/* Row 4: Projects - 2 columns */}
+            <motion.div variants={item} className="md:col-span-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+                    <ProjectCard
+                        title={t.projects.careos.title}
+                        description={t.projects.careos.description}
+                        tags={["PHP", "jQuery", "HTML5", "CSS3", "MySQL", "76 Pages", "28 Modules"]}
+                        image="/projects/careos-preview-v3.png"
+                        link="/projects/careos"
+                    />
+                    <ProjectCard
+                        title={(t.projects as any)["banthi-hospital"].title}
+                        description={(t.projects as any)["banthi-hospital"].description}
+                        tags={["WordPress", "PHP", "Responsive", "Accessible"]}
+                        image="/projects/banthi-hospital-preview.png"
+                        link="/projects/banthi-hospital"
+                    />
+                </div>
             </motion.div>
 
             {/* Row 4: Experience */}

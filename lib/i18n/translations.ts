@@ -33,6 +33,10 @@ export const translations = {
       smartdashboard: {
         title: "SmartDashboard",
         description: "Executive-grade hospital dashboard with AI Predictive Analytics (91% accuracy), real-time Command Center monitoring 420+ patients, and KPI alert system.",
+      },
+      "banthi-hospital": {
+        title: "Banthi Hospital",
+        description: "A modern, accessible, and responsive official website for Banthi Hospital, Lamphun. Featuring patient services, doctor schedules, and hospital news.",
       }
     },
     experience: {
@@ -114,6 +118,10 @@ export const translations = {
       smartdashboard: {
         title: "SmartDashboard",
         description: "Dashboard ผู้บริหารโรงพยาบาล มี AI คาดการณ์ผู้ป่วย (ความแม่นยำ 91%) Command Center ติดตามผู้ป่วย 420+ คน Real-time และระบบแจ้งเตือน KPI วิกฤต",
+      },
+      "banthi-hospital": {
+        title: "โรงพยาบาลบ้านธิ",
+        description: "เว็บไซต์หลักอย่างเป็นทางการของโรงพยาบาลบ้านธิ จังหวัดลำพูน ที่ทันสมัย รองรับการใช้งานทุกอุปกรณ์ และเข้าถึงง่าย อัดแน่นด้วยบริการสำหรับผู้ป่วย ตารางตรวจของแพทย์ และข่าวสารโรงพยาบาล",
       }
     },
     experience: {
