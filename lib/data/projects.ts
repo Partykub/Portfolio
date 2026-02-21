@@ -177,145 +177,101 @@ $('#patient-search').on('keyup', debounce(function() {
       }
     }
   },
-  smartdashboard: {
+  traffix: {
     en: {
-      slug: "smartdashboard",
-      title: "SmartDashboard",
-      subtitle: "Executive Hospital Analytics",
-      description: "Executive-grade hospital dashboard with AI Predictive Analytics (91% accuracy), real-time Command Center monitoring 420+ patients, and KPI alert system.",
-      heroImage: "/projects/smartdashboard-XXX.png",
-      tags: ["PHP", "ApexCharts", "AI/ML", "Real-time"],
-      liveUrl: "http://localhost:8080",
-      role: "Full-stack Developer",
-      timeline: "Feb 2025 – Present",
-      coreStack: ["PHP", "ApexCharts", "JavaScript", "MySQL", "Python ML"],
+      slug: "traffix",
+      title: "Traffix",
+      subtitle: "Traffic Management System",
+      description: "Real-time traffic analytics and incident management system with a comprehensive custom Design System and UI Template gallery.",
+      heroImage: "/projects/traffix-preview.png",
+      tags: ["Next.js", "React", "Tailwind CSS", "Design System"],
+      liveUrl: "http://localhost:3000",
+      role: "Frontend Developer",
+      timeline: "2026",
+      coreStack: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
       challenge: {
         title: "The Challenge",
-        content: "Hospital executives lacked real-time visibility into operational metrics. Decision-making was delayed due to manual report generation, and critical KPI breaches often went unnoticed until it was too late. We needed to build an intelligent dashboard that not only displays real-time data but also predicts potential issues before they occur."
+        content: "Smart city infrastructure required a scalable, real-time dashboard for monitoring intersections and managing incidents. Furthermore, creating a unified developer experience required building a robust custom Design System (Traffix UI) with over 150 tokens and 25 components to ensure consistent user experiences across future applications."
       },
       sections: [
         { id: "challenge", title: "The Challenge" },
         { id: "responsive", title: "Responsive Execution" },
-        { id: "architecture", title: "System Architecture" },
-        { id: "impact", title: "Impact & Performance" }
+        { id: "architecture", title: "Design System & Architecture" }
       ],
       responsive: {
         desktop: {
-          image: "/projects/smartdashboard-XXX.png",
-          label: "Command Center",
-          description: "Full executive dashboard with real-time charts, AI predictions, and department drill-downs"
+          image: "/projects/traffix-desktop.png",
+          label: "Dashboard & Design System",
+          description: "Comprehensive view of the traffic incident dashboard and tokens documentation."
         },
         tablet: {
-          image: "/projects/smartdashboard-XXX.png",
-          label: "Tablet Dashboard",
-          description: "Key metrics at a glance for rounds and meetings"
+          image: "/projects/traffix-tablet.png",
+          label: "Tablet UI Templates",
+          description: "Responsive UI templates optimized for touch interactions on field devices."
         },
         mobile: {
-          image: "/projects/smartdashboard-XXX.png",
-          label: "Alert Center",
-          description: "Push notifications and critical KPI alerts on mobile"
+          image: "/projects/traffix-mobile.png",
+          label: "Mobile Incident Logs",
+          description: "Critical access logs and alerts formatted for on-the-go quick reading."
         }
       },
       architecture: {
-        description: "Multi-layered architecture combining PHP backend for data aggregation, Python microservice for ML predictions, and real-time WebSocket updates to the frontend. ApexCharts renders interactive visualizations.",
+        description: "Built with a token-based Design System foundation using Next.js and Tailwind CSS. The UI is completely modular, separating foundation tokens, utility classes, and business components.",
         features: [
-          "Real-time data streaming via WebSocket",
-          "Python ML service for predictive analytics",
-          "Role-based dashboard customization",
-          "Automated KPI threshold alerting",
-          "Export to PDF/Excel functionality"
-        ],
-        codeSnippet: `// Real-time Chart Update
-const socket = new WebSocket('ws://dashboard/live');
-
-socket.onmessage = (event) => {
-  const data = JSON.parse(event.data);
-  
-  patientChart.updateSeries([{
-    name: 'Patients',
-    data: [...patientChart.w.config.series[0].data, data.count]
-  }]);
-  
-  if (data.count > THRESHOLD) {
-    showAlertNotification('High patient volume detected');
-  }
-};`
-      },
-      metrics: {
-        performance: 88,
-        accessibility: 85,
-        bestPractices: 92,
-        seo: 78
+          "Custom Design System (Traffix UI) with 150+ tokens",
+          "Interactive UI Template Gallery with viewport testing",
+          "Real-time data visualization layouts",
+          "Comprehensive developer documentation",
+          "Light, Dark, and System theme support"
+        ]
       }
     },
     th: {
-      slug: "smartdashboard",
-      title: "SmartDashboard",
-      subtitle: "Dashboard วิเคราะห์ข้อมูลผู้บริหาร",
-      description: "Dashboard ผู้บริหารโรงพยาบาล มี AI คาดการณ์ผู้ป่วย (ความแม่นยำ 91%) Command Center ติดตามผู้ป่วย 420+ คน Real-time และระบบแจ้งเตือน KPI วิกฤต",
-      heroImage: "/projects/smartdashboard-XXX.png",
-      tags: ["PHP", "ApexCharts", "AI/ML", "Real-time"],
-      liveUrl: "http://localhost:8080",
-      role: "Full-stack Developer",
-      timeline: "ก.พ. 2025 – ปัจจุบัน",
-      coreStack: ["PHP", "ApexCharts", "JavaScript", "MySQL", "Python ML"],
+      slug: "traffix",
+      title: "Traffix",
+      subtitle: "ระบบบริหารจัดการจราจรอัจฉริยะ",
+      description: "ระบบบริหารจัดการจราจรและวิเคราะห์ข้อมูลแบบ Real-time พร้อม Design System ฉบับเต็มและ UI Template Gallery สำหรับนักพัฒนา",
+      heroImage: "/projects/traffix-preview.png",
+      tags: ["Next.js", "React", "Tailwind CSS", "Design System"],
+      liveUrl: "http://localhost:3000",
+      role: "Frontend Developer",
+      timeline: "ปี 2026",
+      coreStack: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
       challenge: {
         title: "ความท้าทาย",
-        content: "ผู้บริหารโรงพยาบาลขาดการมองเห็นข้อมูล operational แบบ real-time การตัดสินใจล่าช้าเนื่องจากต้องรอรายงานแบบ manual และการแจ้งเตือน KPI วิกฤตมักมาช้าเกินไป เราต้องสร้าง dashboard อัจฉริยะที่ไม่เพียงแสดงข้อมูล real-time แต่ยังคาดการณ์ปัญหาล่วงหน้าได้"
+        content: "โครงสร้างพื้นฐานของ Smart City ต้องการ Dashboard ที่สามารถติดตามทางแยกและจัดการอุบัติเหตุได้แบบ Real-time นอกจากนี้ เพื่อให้ประสบการณ์ของนักพัฒนาเป็นไปในทิศทางเดียวกัน เราจึงต้องสร้าง Design System (Traffix UI) ที่มี Token มากกว่า 150 ตัวและ Component กว่า 25 แบบ เพื่อควบคุมมาตรฐาน UI ของแอปพลิเคชันในอนาคตทั้งหมด"
       },
       sections: [
         { id: "challenge", title: "ความท้าทาย" },
         { id: "responsive", title: "การรองรับทุกหน้าจอ" },
-        { id: "architecture", title: "สถาปัตยกรรมระบบ" },
-        { id: "impact", title: "ผลลัพธ์และประสิทธิภาพ" }
+        { id: "architecture", title: "ระบบ Design System" }
       ],
       responsive: {
         desktop: {
-          image: "/projects/smartdashboard-XXX.png",
-          label: "Command Center",
-          description: "Dashboard ผู้บริหารเต็มรูปแบบพร้อมกราฟ real-time, การคาดการณ์ AI และข้อมูลแยกรายแผนก"
+          image: "/projects/traffix-desktop.png",
+          label: "หน้าจอ Desktop",
+          description: "หน้า Dashboard จัดการอุบัติเหตุแบบเต็มรูปแบบและคู่มือการใช้งาน Design System"
         },
         tablet: {
-          image: "/projects/smartdashboard-XXX.png",
-          label: "Tablet Dashboard",
-          description: "ตัวชี้วัดสำคัญสำหรับการ round และการประชุม"
+          image: "/projects/traffix-tablet.png",
+          label: "หน้าเว็บสำหรับแท็บเล็ต",
+          description: "UI Template ที่ปรับเปลี่ยนขนาดรองรับการสัมผัส (Touch) เหมาะสำหรับการใช้งานภาคสนาม"
         },
         mobile: {
-          image: "/projects/smartdashboard-XXX.png",
-          label: "ศูนย์แจ้งเตือน",
-          description: "Push notification และการแจ้งเตือน KPI วิกฤตบนมือถือ"
+          image: "/projects/traffix-mobile.png",
+          label: "หน้าจอมือถือ",
+          description: "กระชับและเข้าถึงง่าย ขอดูประวัติการตรวจจับได้รวดเร็ว เหมาะกับเจ้าหน้าที่ใช้งานขณะตั้งด่าน"
         }
       },
       architecture: {
-        description: "สถาปัตยกรรมหลายชั้นผสมผสาน PHP backend สำหรับรวบรวมข้อมูล, Python microservice สำหรับ ML predictions และการอัปเดต real-time ผ่าน WebSocket ApexCharts render กราฟแบบ interactive",
+        description: "พัฒนาระบบบนโครงสร้างแบบ Token-based ด้วย Next.js และ Tailwind CSS โดยแยกส่วนข้อมูลเชิง Foundation, Utilities และ Components ออกจากกันอย่างชัดเจน",
         features: [
-          "Streaming ข้อมูล real-time ผ่าน WebSocket",
-          "Python ML service สำหรับ predictive analytics",
-          "ปรับแต่ง dashboard ตาม role",
-          "แจ้งเตือนอัตโนมัติเมื่อ KPI ถึง threshold",
-          "Export เป็น PDF/Excel ได้"
-        ],
-        codeSnippet: `// Real-time Chart Update
-const socket = new WebSocket('ws://dashboard/live');
-
-socket.onmessage = (event) => {
-  const data = JSON.parse(event.data);
-  
-  patientChart.updateSeries([{
-    name: 'Patients',
-    data: [...patientChart.w.config.series[0].data, data.count]
-  }]);
-  
-  if (data.count > THRESHOLD) {
-    showAlertNotification('High patient volume detected');
-  }
-};`
-      },
-      metrics: {
-        performance: 88,
-        accessibility: 85,
-        bestPractices: 92,
-        seo: 78
+          "ระบบ Design System (Traffix UI) แบบ Custom พร้อม Token 150+ รายการ",
+          "หน้า UI Template Gallery แบบ Interactive สำหรับทดสอบ Viewport",
+          "โครงสร้างการแสดงผลข้อมูลแบบ Real-time",
+          "เอกสารคู่มือสำหรับนักพัฒนาแบบครบถ้วนตามมาตรฐาน",
+          "รองรับโหมดสีแบบ Light, Dark และ System"
+        ]
       }
     }
   },

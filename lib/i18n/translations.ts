@@ -30,9 +30,9 @@ export const translations = {
         title: "CareOS",
         description: "Full-cycle Hospital Management System redesigned from legacy HOSxP. Covers EMR, doctor examination, pharmacy queue with drug allergy alerts, and real-time billing.",
       },
-      smartdashboard: {
-        title: "SmartDashboard",
-        description: "Executive-grade hospital dashboard with AI Predictive Analytics (91% accuracy), real-time Command Center monitoring 420+ patients, and KPI alert system.",
+      traffix: {
+        title: "Traffix",
+        description: "Real-time traffic analytics and incident management system with a comprehensive custom Design System and UI Template gallery.",
       },
       "banthi-hospital": {
         title: "Banthi Hospital",
@@ -119,9 +119,9 @@ export const translations = {
         title: "CareOS",
         description: "ระบบจัดการโรงพยาบาลครบวงจร รีดีไซน์จาก HOSxP ให้ทันสมัย ครอบคลุมเวชระเบียน ห้องตรวจ ระบบคิวยาพร้อมแจ้งเตือนอาการแพ้ และการเงิน",
       },
-      smartdashboard: {
-        title: "SmartDashboard",
-        description: "Dashboard ผู้บริหารโรงพยาบาล มี AI คาดการณ์ผู้ป่วย (ความแม่นยำ 91%) Command Center ติดตามผู้ป่วย 420+ คน Real-time และระบบแจ้งเตือน KPI วิกฤต",
+      traffix: {
+        title: "Traffix",
+        description: "ระบบบริหารจัดการจราจรและวิเคราะห์ข้อมูลแบบ Real-time พร้อม Design System ฉบับเต็มและ UI Template Gallery สำหรับนักพัฒนา",
       },
       "banthi-hospital": {
         title: "โรงพยาบาลบ้านธิ",

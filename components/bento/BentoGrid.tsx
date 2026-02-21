@@ -55,7 +55,14 @@ export function BentoGrid() {
 
             {/* Row 4: Projects */}
             <motion.div variants={item} className="md:col-span-3">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-10">
+                    <ProjectCard
+                        title={(t.projects as any)["traffix"]?.title || "Traffix"}
+                        description={(t.projects as any)["traffix"]?.description || "Traffic Management System"}
+                        tags={["Next.js", "React", "Tailwind CSS", "Design System"]}
+                        image="/projects/traffix-preview.png"
+                        link="/projects/traffix"
+                    />
                     <ProjectCard
                         title={t.projects.careos.title}
                         description={t.projects.careos.description}
