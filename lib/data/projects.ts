@@ -21,9 +21,9 @@ export interface ProjectData {
     title: string;
   }[];
   responsive?: {
-    desktop: { image: string; label: string; description: string };
-    tablet: { image: string; label: string; description: string };
-    mobile: { image: string; label: string; description: string };
+    desktop: { image: string | string[]; label: string; description: string };
+    tablet: { image: string | string[]; label: string; description: string };
+    mobile: { image: string | string[]; label: string; description: string };
   };
   architecture?: {
     description: string;
@@ -200,9 +200,9 @@ $('#patient-search').on('keyup', debounce(function() {
       ],
       responsive: {
         desktop: {
-          image: "/projects/traffix-desktop.png",
-          label: "Dashboard & Design System",
-          description: "Comprehensive view of the traffic incident dashboard and tokens documentation."
+          image: ["/projects/traffix-entry.png", "/projects/traffix-desktop.png"],
+          label: "Entry Operations Dashboard",
+          description: "Real-time vehicle entry monitoring and gate control with live CCTV feeds."
         },
         tablet: {
           image: "/projects/traffix-tablet.png",
@@ -248,9 +248,9 @@ $('#patient-search').on('keyup', debounce(function() {
       ],
       responsive: {
         desktop: {
-          image: "/projects/traffix-desktop.png",
-          label: "หน้าจอ Desktop",
-          description: "หน้า Dashboard จัดการอุบัติเหตุแบบเต็มรูปแบบและคู่มือการใช้งาน Design System"
+          image: ["/projects/traffix-entry.png", "/projects/traffix-desktop.png"],
+          label: "หน้า Dashboard ควบคุมการเข้า-ออก",
+          description: "ระบบจัดการประตูทางเข้าพร้อมภาพจากกล้องวงจรปิดแบบสด และการลงทะเบียนยานพาหนะ"
         },
         tablet: {
           image: "/projects/traffix-tablet.png",

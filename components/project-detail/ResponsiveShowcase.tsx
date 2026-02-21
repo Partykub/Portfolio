@@ -20,7 +20,7 @@ const deviceIcons = {
   mobile: Smartphone,
 };
 
-export function ResponsiveShowcase({ 
+export function ResponsiveShowcase({
   project,
   title = "Responsive Execution"
 }: ResponsiveShowcaseProps) {
@@ -47,15 +47,15 @@ export function ResponsiveShowcase({
           {devices.map((device) => {
             const Icon = deviceIcons[device];
             const isActive = activeDevice === device;
-            
+
             return (
               <button
                 key={device}
                 onClick={() => setActiveDevice(device)}
                 className={cn(
                   "flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all",
-                  isActive 
-                    ? "bg-background text-foreground shadow-sm" 
+                  isActive
+                    ? "bg-background text-foreground shadow-sm"
                     : "text-muted-foreground hover:text-foreground"
                 )}
               >
@@ -76,21 +76,28 @@ export function ResponsiveShowcase({
             transition={{ duration: 0.3 }}
             className="space-y-4"
           >
-            {/* Image Container */}
-            <div 
-              className={cn(
-                "relative mx-auto overflow-hidden rounded-xl border border-border bg-card shadow-lg",
-                activeDevice === "desktop" && "max-w-4xl aspect-video",
-                activeDevice === "tablet" && "max-w-md aspect-[3/4]",
-                activeDevice === "mobile" && "max-w-xs aspect-[9/16]"
-              )}
-            >
-              <Image
-                src={project.responsive[activeDevice].image}
-                alt={project.responsive[activeDevice].label}
-                fill
-                className="object-cover object-top"
-              />
+            {/* Image Container(s) */}
+            <div className="flex flex-col gap-8">
+              {(Array.isArray(project.responsive[activeDevice].image)
+                ? (project.responsive[activeDevice].image as string[])
+                : [project.responsive[activeDevice].image as string]).map((imgSrc, idx) => (
+                  <div
+                    key={idx}
+                    className={cn(
+                      "relative mx-auto w-full overflow-hidden rounded-xl border border-border bg-card shadow-lg",
+                      activeDevice === "desktop" && "max-w-4xl aspect-video",
+                      activeDevice === "tablet" && "max-w-md aspect-[3/4]",
+                      activeDevice === "mobile" && "max-w-xs aspect-[9/16]"
+                    )}
+                  >
+                    <Image
+                      src={imgSrc}
+                      alt={`${project.responsive![activeDevice].label} - View ${idx + 1}`}
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
+                ))}
             </div>
 
             {/* Label & Description */}
