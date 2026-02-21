@@ -37,6 +37,10 @@ export const translations = {
       "banthi-hospital": {
         title: "Banthi Hospital",
         description: "A modern, accessible, and responsive official website for Banthi Hospital, Lamphun. Featuring patient services, doctor schedules, and hospital news.",
+      },
+      ch7election: {
+        title: "CH7 Election 2026",
+        description: "Developed the responsive UI for Thailand's 2026 Election real-time results, featuring an interactive Hexagon map representing constituencies and detailed regional dashboard layouts.",
       }
     },
     experience: {
@@ -122,6 +126,10 @@ export const translations = {
       "banthi-hospital": {
         title: "โรงพยาบาลบ้านธิ",
         description: "เว็บไซต์หลักอย่างเป็นทางการของโรงพยาบาลบ้านธิ จังหวัดลำพูน ที่ทันสมัย รองรับการใช้งานทุกอุปกรณ์ และเข้าถึงง่าย อัดแน่นด้วยบริการสำหรับผู้ป่วย ตารางตรวจของแพทย์ และข่าวสารโรงพยาบาล",
+      },
+      ch7election: {
+        title: "CH7 Election 2026",
+        description: "พัฒนา UI ระบบรายงานผลตารางและแผนที่การเลือกตั้งปี 2569 (Hexagon Map) เพื่อแสดงที่นั่ง ส.ส. แบ่งเขตทั่วประเทศแบบเรียลไทม์ พร้อมการออกแบบที่รองรับ Responsive ทุกขนาดหน้าจอ",
       }
     },
     experience: {

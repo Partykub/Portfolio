@@ -53,9 +53,9 @@ export function BentoGrid() {
                 <SkillsMarquee />
             </motion.div>
 
-            {/* Row 4: Projects - 2 columns */}
+            {/* Row 4: Projects */}
             <motion.div variants={item} className="md:col-span-3">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
                     <ProjectCard
                         title={t.projects.careos.title}
                         description={t.projects.careos.description}
@@ -69,6 +69,13 @@ export function BentoGrid() {
                         tags={["WordPress", "PHP", "Responsive", "Accessible"]}
                         image="/projects/banthi-hospital-preview.png"
                         link="/projects/banthi-hospital"
+                    />
+                    <ProjectCard
+                        title={(t.projects as any)["ch7election"].title}
+                        description={(t.projects as any)["ch7election"].description}
+                        tags={["React", "TypeScript", "Tailwind CSS", "Responsive UI", "Real-time"]}
+                        image="/projects/ch7-election-preview.png"
+                        link="/projects/ch7election"
                     />
                 </div>
             </motion.div>

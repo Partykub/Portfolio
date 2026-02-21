@@ -408,6 +408,82 @@ socket.onmessage = (event) => {
         seo: 92
       }
     }
+  },
+  ch7election: {
+    en: {
+      slug: "ch7election",
+      title: "CH7 Election 2026",
+      subtitle: "Official Election Visualization",
+      description: "Developed the responsive UI for Thailand's 2026 Election real-time results, featuring an interactive Hexagon map representing constituencies.",
+      heroImage: "/projects/ch7-election-preview.png",
+      tags: ["React", "TypeScript", "Tailwind CSS"],
+      liveUrl: "https://www.ch7.com/election2569/results/constituency",
+      role: "Frontend Developer (UI/Map)",
+      timeline: "2026",
+      coreStack: ["React", "TypeScript", "Tailwind CSS"],
+      challenge: {
+        title: "The Challenge",
+        content: "The goal was to visualize complex, real-time election data intuitively for a massive audience during a major event. A key challenge was rendering the 400 constituency seats as an interactive hexagon map that remains performant and responsive across desktop, tablet, and mobile devices."
+      },
+      sections: [
+        { id: "challenge", title: "The Challenge" },
+        { id: "responsive", title: "Responsive Execution" }
+      ],
+      responsive: {
+        desktop: {
+          image: "/projects/ch7-election-preview.png",
+          label: "Desktop View",
+          description: "Full parliament hexagon map with real-time party leaderboard on the side."
+        },
+        tablet: {
+          image: "/projects/ch7-election-tablet.png",
+          label: "Tablet View",
+          description: "Adjusted layout to maintain hexagon readability while stacking the leaderboard."
+        },
+        mobile: {
+          image: "/projects/ch7-election-mobile.png",
+          label: "Mobile View",
+          description: "Optimized mobile experience tailored for fast, on-the-go results updates."
+        }
+      }
+    },
+    th: {
+      slug: "ch7election",
+      title: "เลือกตั้ง 69 อนาคตประเทศไทย",
+      subtitle: "ระบบรายงานผลแบบเวลาจริง",
+      description: "พัฒนา UI แผนที่รังผึ้ง (Hexagon Map) สำหรับรายงานผลการเลือกตั้งปี 2569 พร้อมรองรับ Responsive",
+      heroImage: "/projects/ch7-election-preview.png",
+      tags: ["React", "TypeScript", "Tailwind CSS"],
+      liveUrl: "https://www.ch7.com/election2569/results/constituency",
+      role: "Frontend Developer (ส่วน UI)",
+      timeline: "ปี 2026",
+      coreStack: ["React", "TypeScript", "Tailwind CSS"],
+      challenge: {
+        title: "ความท้าทาย",
+        content: "เป้าหมายหลักคือการนำเสนอข้อมูลผลการนับคะแนนที่ซับซ้อนให้ผู้ชมเข้าใจได้ง่ายแบบเรียลไทม์ ความท้าทายสำคัญคือการทำ UI รูปหกเหลี่ยมแสดงถึง ส.ส. ทั้ง 400 เขตให้ทำงานได้ลื่นไหล ไม่กระตุก และแสดงผลได้อย่างสมบูรณ์ในทุกขนาดหน้าจอ ทั้งคอมพิวเตอร์และมือถือ"
+      },
+      sections: [
+        { id: "challenge", title: "ความท้าทาย" },
+        { id: "responsive", title: "การรองรับทุกหน้าจอ" }
+      ],
+      responsive: {
+        desktop: {
+          image: "/projects/ch7-election-preview.png",
+          label: "หน้าจอ Desktop",
+          description: "แสดงแผนที่สภาแบบเต็มรูปแบบ พร้อมตารางสรุปคะแนนของแต่ละพรรคการเมือง"
+        },
+        tablet: {
+          image: "/projects/ch7-election-tablet.png",
+          label: "หน้าจอ Tablet",
+          description: "ปรับรูปแบบเพื่อให้อ่านข้อมูลจากหกเหลี่ยมได้ชัดเจน"
+        },
+        mobile: {
+          image: "/projects/ch7-election-mobile.png",
+          label: "หน้าจอ Mobile",
+          description: "หน้าจอขนาดเล็กที่ออกแบบมาให้ดูผลคะแนนแบบฉับไวระหว่างการเดินทาง"
+        }
+      }
+    }
   }
 };
 
