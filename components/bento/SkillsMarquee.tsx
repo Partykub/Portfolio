@@ -19,6 +19,8 @@ import {
   SiFastapi,
   SiRedis,
   SiPhp,
+  SiRubyonrails,
+  SiAngular,
 } from "react-icons/si";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -89,6 +91,8 @@ const skills = [
   { name: "Node.js", icon: SiNodedotjs, color: "text-green-500" },
   { name: "Git", icon: SiGit, color: "text-red-500" },
   { name: "PHP", icon: SiPhp, color: "text-indigo-400" },
+  { name: "Ruby on Rails", icon: SiRubyonrails, color: "text-red-600" },
+  { name: "Angular", icon: SiAngular, color: "text-red-500" },
   { name: "HTML5", icon: SiHtml5, color: "text-orange-500" },
   { name: "CSS3", icon: SiCss3, color: "text-blue-500" },
 ];
@@ -103,7 +107,6 @@ const softSkillsConfig: SoftSkill[] = [
   { key: "problemSolving", icon: Lightbulb },
   { key: "teamCollaboration", icon: Users },
   { key: "criticalThinking", icon: Brain },
-  { key: "userCentricDesign", icon: Heart },
   { key: "fastLearner", icon: Rocket },
   { key: "effectiveCommunication", icon: MessageSquare },
 ];

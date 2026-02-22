@@ -331,7 +331,7 @@ export function PatientSearch({ onSearch }) {
       heroImage: "/projects/banthi-hospital-desktop.png",
       tags: ["HTML5", "CSS3", "Vanilla JS", "PHP", "Responsive"],
       liveUrl: "http://localhost:8082",
-      role: "Frontend & Backend Developer",
+      role: "Frontend",
       timeline: "Aug 2025 – Present",
       coreStack: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"],
       challenge: {
@@ -379,7 +379,7 @@ export function PatientSearch({ onSearch }) {
       heroImage: "/projects/banthi-hospital-desktop.png",
       tags: ["HTML5", "CSS3", "Vanilla JS", "PHP", "Responsive"],
       liveUrl: "http://localhost:8082",
-      role: "Frontend & Backend Developer",
+      role: "Frontend",
       timeline: "ส.ค. 2025 – ปัจจุบัน",
       coreStack: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"],
       challenge: {
