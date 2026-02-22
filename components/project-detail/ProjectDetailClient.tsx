@@ -7,8 +7,6 @@ import {
   ProjectSidebar,
   ChallengeSection,
   ResponsiveShowcase,
-  ArchitectureSection,
-  ImpactMetrics,
 } from "@/components/project-detail";
 import { Navbar } from "@/components/ui/Navbar";
 import { notFound } from "next/navigation";
@@ -23,8 +21,6 @@ const labels = {
     coreStack: "Core Stack",
     toc: "Table of Contents",
     responsive: "Responsive Execution",
-    architecture: "Component Architecture",
-    impact: "Impact & Performance",
   },
   th: {
     back: "กลับไปหน้า Portfolio",
@@ -32,8 +28,6 @@ const labels = {
     role: "ตำแหน่ง",
     timeline: "ระยะเวลา",
     coreStack: "เทคโนโลยีหลัก",
-    architecture: "สถาปัตยกรรมระบบ",
-    impact: "ผลลัพธ์และประสิทธิภาพ",
     toc: "สารบัญ",
     responsive: "การรองรับทุกหน้าจอ",
   },
@@ -81,11 +75,6 @@ export function ProjectDetailClient({ slug }: ProjectDetailClientProps) {
             {/* Challenge */}
             <ChallengeSection project={project} />
 
-            {/* Architecture Section */}
-            <ArchitectureSection project={project} title={l.architecture} />
-
-            {/* Impact Metrics */}
-            <ImpactMetrics project={project} title={l.impact} />
             {/* Responsive Showcase */}
             <ResponsiveShowcase project={project} title={l.responsive} />
           </div>

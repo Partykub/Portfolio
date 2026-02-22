@@ -2,6 +2,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 import type { ProjectData } from "@/lib/data/projects";
 
 interface ProjectSidebarProps {
@@ -62,11 +63,52 @@ export function ProjectSidebar({
           {coreStackLabel}
         </h4>
         <div className="flex flex-wrap gap-1.5 sm:gap-2">
-          {project.coreStack.map((tech) => (
-            <Badge key={tech} variant="secondary" className="text-xs">
-              {tech}
-            </Badge>
-          ))}
+          {[...project.tags]
+            .sort((a, b) => {
+              const SPECIAL = [
+                "Design System",
+                "Design Token",
+                "Atomic Design",
+                "Real-time",
+                "UI/UX Refactor",
+                "UI Refactor",
+                "IoT",
+                "MQTT",
+                "Responsive",
+                "Accessible",
+              ];
+              const isASpecial = SPECIAL.includes(a);
+              const isBSpecial = SPECIAL.includes(b);
+              return isASpecial === isBSpecial ? 0 : isASpecial ? 1 : -1;
+            })
+            .map((tag) => {
+              const SPECIAL = [
+                "Design System",
+                "Design Token",
+                "Atomic Design",
+                "Real-time",
+                "UI/UX Refactor",
+                "UI Refactor",
+                "IoT",
+                "MQTT",
+                "Responsive",
+                "Accessible",
+              ];
+              const isSpecialTag = SPECIAL.includes(tag);
+              return (
+                <Badge
+                  key={tag}
+                  variant={isSpecialTag ? "default" : "secondary"}
+                  className={cn(
+                    "text-xs",
+                    isSpecialTag &&
+                      "bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 border border-blue-500/30 font-medium",
+                  )}
+                >
+                  {tag}
+                </Badge>
+              );
+            })}
         </div>
       </div>
 

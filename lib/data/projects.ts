@@ -60,8 +60,6 @@ export const projects: Record<string, { en: ProjectData; th: ProjectData }> = {
       sections: [
         { id: "challenge", title: "The Challenge" },
         { id: "responsive", title: "Responsive Execution" },
-        { id: "architecture", title: "Component Architecture" },
-        { id: "impact", title: "Impact & Performance" },
       ],
       responsive: {
         desktop: {
@@ -145,8 +143,6 @@ export function PatientSearch({ onSearch }) {
       sections: [
         { id: "challenge", title: "ความท้าทาย" },
         { id: "responsive", title: "การรองรับทุกหน้าจอ" },
-        { id: "architecture", title: "สถาปัตยกรรมระบบ" },
-        { id: "impact", title: "ผลลัพธ์และประสิทธิภาพ" },
       ],
       responsive: {
         desktop: {
@@ -222,7 +218,7 @@ export function PatientSearch({ onSearch }) {
       tags: ["LPR", "OCR", "FastAPI", "Next.js", "IoT", "MQTT", "Real-time"],
       liveUrl: "http://localhost:3000",
       role: "Full Stack Developer",
-      timeline: "2026",
+      timeline: "Jun 2025 – Present",
       coreStack: ["Next.js", "FastAPI", "PostgreSQL", "MQTT", "Redis"],
       challenge: {
         title: "The Challenge",
@@ -278,7 +274,7 @@ export function PatientSearch({ onSearch }) {
       tags: ["LPR", "FastAPI", "Next.js", "IoT", "MQTT", "Real-time"],
       liveUrl: "http://localhost:3000",
       role: "Full Stack Developer",
-      timeline: "ปี 2026",
+      timeline: "มิ.ย. 2025 – ปัจจุบัน",
       coreStack: ["Next.js", "FastAPI", "PostgreSQL", "MQTT", "Redis"],
       challenge: {
         title: "ความท้าทาย",
@@ -336,7 +332,7 @@ export function PatientSearch({ onSearch }) {
       tags: ["HTML5", "CSS3", "Vanilla JS", "PHP", "Responsive"],
       liveUrl: "http://localhost:8082",
       role: "Frontend & Backend Developer",
-      timeline: "2024",
+      timeline: "Aug 2025 – Present",
       coreStack: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"],
       challenge: {
         title: "The Challenge",
@@ -384,7 +380,7 @@ export function PatientSearch({ onSearch }) {
       tags: ["HTML5", "CSS3", "Vanilla JS", "PHP", "Responsive"],
       liveUrl: "http://localhost:8082",
       role: "Frontend & Backend Developer",
-      timeline: "ปี 2024",
+      timeline: "ส.ค. 2025 – ปัจจุบัน",
       coreStack: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"],
       challenge: {
         title: "ความท้าทาย",
@@ -443,7 +439,7 @@ export function PatientSearch({ onSearch }) {
       ],
       liveUrl: "https://www.ch7.com/election2569/results/constituency",
       role: "Frontend Developer (UI/Map)",
-      timeline: "2026",
+      timeline: "Dec 2025 – Feb 2026",
       coreStack: ["Next.js", "TypeScript", "Tailwind CSS", "D3.js"],
       challenge: {
         title: "The Challenge",
@@ -494,7 +490,7 @@ export function PatientSearch({ onSearch }) {
       ],
       liveUrl: "https://www.ch7.com/election2569/results/constituency",
       role: "Frontend Developer (ส่วน UI)",
-      timeline: "ปี 2026",
+      timeline: "ธ.ค. 2568 – ก.พ. 2569",
       coreStack: ["Next.js", "TypeScript", "Tailwind CSS", "D3.js"],
       challenge: {
         title: "ความท้าทาย",

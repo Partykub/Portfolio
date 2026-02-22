@@ -215,21 +215,21 @@ export function ContactCard() {
           <Link
             href="https://linkedin.com/in/ratchanon-kunyodying"
             target="_blank"
-            className="flex flex-col items-center justify-center p-6 rounded-2xl bg-secondary/20 border border-border/50 hover:bg-[#0077b5]/10 hover:border-[#0077b5]/30 transition-all gap-3 group cursor-pointer h-full"
+            className="flex flex-col items-center justify-center p-6 rounded-2xl bg-secondary/20 border border-border/50 hover:bg-secondary/30 hover:border-border transition-all gap-3 group cursor-pointer h-full"
           >
             <motion.div
               whileHover={{ rotate: [0, -10, 10, -10, 0] }}
               transition={{ duration: 0.5 }}
-              className="p-3 rounded-full bg-background border border-border group-hover:border-[#0077b5]/50 transition-colors"
+              className="p-3 rounded-full bg-background border border-border transition-colors"
             >
-              <Linkedin className="w-5 h-5 text-foreground group-hover:text-[#0077b5] transition-colors" />
+              <Linkedin className="w-5 h-5 text-foreground transition-colors" />
             </motion.div>
             <div className="text-center">
               <p className="text-sm font-medium text-muted-foreground mb-1 flex items-center justify-center gap-1">
                 {t.contact.linkedin}{" "}
                 <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
               </p>
-              <p className="text-base font-semibold text-foreground group-hover:text-[#0077b5] transition-colors">
+              <p className="text-base font-semibold text-foreground transition-colors">
                 {t.contact.connect}
               </p>
             </div>

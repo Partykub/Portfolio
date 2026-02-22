@@ -15,8 +15,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Modern Full-Stack Bento Portfolio",
-  description: "A developer portfolio showcasing full-stack skills and projects.",
+  title: "Ratchanon K. | Portfolio",
 };
 
 export default function RootLayout({
@@ -35,9 +34,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <LanguageProvider>
-            {children}
-          </LanguageProvider>
+          <LanguageProvider>{children}</LanguageProvider>
         </ThemeProvider>
       </body>
     </html>
