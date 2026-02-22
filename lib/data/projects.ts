@@ -60,6 +60,8 @@ export const projects: Record<string, { en: ProjectData; th: ProjectData }> = {
       sections: [
         { id: "challenge", title: "The Challenge" },
         { id: "responsive", title: "Responsive Execution" },
+        { id: "architecture", title: "Component Architecture" },
+        { id: "impact", title: "Impact & Performance" },
       ],
       responsive: {
         desktop: {
@@ -143,6 +145,8 @@ export function PatientSearch({ onSearch }) {
       sections: [
         { id: "challenge", title: "ความท้าทาย" },
         { id: "responsive", title: "การรองรับทุกหน้าจอ" },
+        { id: "architecture", title: "สถาปัตยกรรมระบบ" },
+        { id: "impact", title: "ผลลัพธ์และประสิทธิภาพ" },
       ],
       responsive: {
         desktop: {
