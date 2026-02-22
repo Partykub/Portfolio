@@ -12,10 +12,22 @@ type LanguageContextType = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguageState] = useState<Language>('en');
 
-  // Optional: Load from localStorage if needed, skipping for simplicity/SSR consistency for now or handling it in useEffect
-  
+  // Load saved language from localStorage on mount (client-side only)
+  useEffect(() => {
+    const saved = localStorage.getItem('portfolio-lang') as Language | null;
+    if (saved && (saved === 'en' || saved === 'th')) {
+      setLanguageState(saved);
+    }
+  }, []);
+
+  // Save language to localStorage whenever it changes
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang);
+    localStorage.setItem('portfolio-lang', lang);
+  };
+
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t: translations[language] }}>
       {children}

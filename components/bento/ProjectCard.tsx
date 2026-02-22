@@ -52,9 +52,9 @@ export function ProjectCard({
     }
 
     return (
-        <Link href={link} className="block">
+        <Link href={link} className="block h-full">
             <motion.div
-                className={cn("perspective-1000", className)}
+                className={cn("perspective-1000 h-full", className)}
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
                 style={{
@@ -71,7 +71,7 @@ export function ProjectCard({
                         transformStyle: "preserve-3d"
                     }}
                     className={cn(
-                        "group relative flex flex-col overflow-hidden transition-all hover:shadow-2xl rounded-xl",
+                        "group relative flex flex-col justify-between overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl rounded-xl h-full",
                         "bg-card border-border text-card-foreground border"
                     )}
                 >
@@ -79,10 +79,10 @@ export function ProjectCard({
                     <div className="p-6 relative z-10 bg-card" style={{ transform: "translateZ(20px)" }}>
                         <div className="flex justify-between items-start mb-4">
                             <div className="space-y-2 flex-1">
-                                <h3 className="text-2xl font-bold font-heading text-foreground">
+                                <h3 className="text-2xl font-bold font-heading text-foreground pb-3">
                                     {title}
                                 </h3>
-                                <p className="text-sm text-muted-foreground line-clamp-2">
+                                <p className="text-sm text-muted-foreground pb-2">
                                     {description}
                                 </p>
                             </div>
@@ -98,15 +98,27 @@ export function ProjectCard({
                         </div>
 
                         <div className="flex flex-wrap gap-2">
-                            {tags.map((tag) => (
-                                <Badge
-                                    key={tag}
-                                    variant="secondary"
-                                    className="text-xs"
-                                >
-                                    {tag}
-                                </Badge>
-                            ))}
+                            {[...tags].sort((a, b) => {
+                                const SPECIAL = ["Design System", "Design Token", "Atomic Design", "Real-time", "UI/UX Refactor", "IoT", "MQTT", "Responsive", "Accessible"];
+                                const isASpecial = SPECIAL.includes(a);
+                                const isBSpecial = SPECIAL.includes(b);
+                                return isASpecial === isBSpecial ? 0 : isASpecial ? 1 : -1;
+                            }).map((tag) => {
+                                const SPECIAL = ["Design System", "Design Token", "Atomic Design", "Real-time", "UI/UX Refactor", "IoT", "MQTT", "Responsive", "Accessible"];
+                                const isSpecialTag = SPECIAL.includes(tag);
+                                return (
+                                    <Badge
+                                        key={tag}
+                                        variant={isSpecialTag ? "default" : "secondary"}
+                                        className={cn(
+                                            "text-xs",
+                                            isSpecialTag && "bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 border border-blue-500/30 font-medium"
+                                        )}
+                                    >
+                                        {tag}
+                                    </Badge>
+                                );
+                            })}
                         </div>
                     </div>
 

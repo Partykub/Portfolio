@@ -27,10 +27,10 @@ function CircularProgress({ value, label, color }: CircularProgressProps) {
   };
 
   return (
-    <div className="flex flex-col items-center gap-3">
-      <div className="relative w-28 h-28">
+    <div className="flex flex-col items-center gap-2 sm:gap-3">
+      <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28">
         {/* Background circle */}
-        <svg className="w-full h-full -rotate-90">
+        <svg className="w-full h-full -rotate-90" viewBox="0 0 112 112">
           <circle
             cx="56"
             cy="56"
@@ -61,7 +61,10 @@ function CircularProgress({ value, label, color }: CircularProgressProps) {
         {/* Score text */}
         <div className="absolute inset-0 flex items-center justify-center">
           <motion.span
-            className={cn("text-2xl font-bold", getColorClass(value))}
+            className={cn(
+              "text-xl sm:text-2xl font-bold",
+              getColorClass(value),
+            )}
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -71,14 +74,17 @@ function CircularProgress({ value, label, color }: CircularProgressProps) {
           </motion.span>
         </div>
       </div>
-      <span className="text-sm font-medium text-muted-foreground text-center">
+      <span className="text-xs sm:text-sm font-medium text-muted-foreground text-center">
         {label}
       </span>
     </div>
   );
 }
 
-export function ImpactMetrics({ project, title = "Impact & Performance" }: ImpactMetricsProps) {
+export function ImpactMetrics({
+  project,
+  title = "Impact & Performance",
+}: ImpactMetricsProps) {
   if (!project.metrics) return null;
 
   const metrics = [
@@ -89,22 +95,23 @@ export function ImpactMetrics({ project, title = "Impact & Performance" }: Impac
   ];
 
   return (
-    <section id="impact" className="py-16 md:py-24">
+    <section id="impact" className="py-12 sm:py-16 md:py-24">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">
           {title}
         </h2>
-        <p className="text-muted-foreground mb-12 max-w-2xl">
-          Lighthouse scores reflecting the quality and optimization of the final build.
+        <p className="text-sm sm:text-base text-muted-foreground mb-8 sm:mb-12 max-w-2xl">
+          Lighthouse scores reflecting the quality and optimization of the final
+          build.
         </p>
 
         {/* Metrics Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {metrics.map((metric, index) => (
             <motion.div
               key={metric.label}
@@ -112,7 +119,7 @@ export function ImpactMetrics({ project, title = "Impact & Performance" }: Impac
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-6 rounded-xl bg-card border border-border"
+              className="p-4 sm:p-6 rounded-lg sm:rounded-xl bg-card border border-border"
             >
               <CircularProgress
                 value={metric.value}

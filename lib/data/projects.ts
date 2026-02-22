@@ -44,406 +44,490 @@ export const projects: Record<string, { en: ProjectData; th: ProjectData }> = {
       slug: "careos",
       title: "CareOS",
       subtitle: "Hospital Management System",
-      description: "Full-cycle Hospital Management System redesigned from legacy HOSxP. Covers EMR, doctor examination, pharmacy queue with drug allergy alerts, and real-time billing.",
+      description:
+        "Prototype of a full-cycle Hospital Management System redesigned from legacy HOSxP. Covers EMR, doctor examination, pharmacy queue with drug allergy alerts, and real-time billing.",
       heroImage: "/projects/careos-preview-v3.png",
-      tags: ["PHP", "jQuery", "HTML5", "CSS3", "MySQL"],
+      tags: ["Next.js", "React", "CSS Modules", "UI Refactor", "Responsive"],
       liveUrl: "http://localhost:8081",
       role: "Lead Frontend Developer",
       timeline: "Jan 2025 – Present",
-      coreStack: ["PHP", "jQuery", "HTML5", "CSS3", "MySQL", "Bootstrap"],
+      coreStack: ["Next.js", "React", "TypeScript", "CSS Modules"],
       challenge: {
         title: "The Challenge",
-        content: "The legacy HOSxP system was outdated, difficult to navigate, and lacked modern responsive design. Healthcare staff spent excessive time navigating complex interfaces, leading to reduced efficiency and potential errors in patient care. Our goal was to completely redesign the UI/UX while maintaining data integrity and backward compatibility with existing hospital workflows."
+        content:
+          "The legacy HOSxP system was outdated, difficult to navigate, and lacked modern responsive design. Healthcare staff spent excessive time navigating complex interfaces, leading to reduced efficiency and potential errors in patient care. Our goal was to completely redesign the UI/UX while maintaining data integrity and backward compatibility with existing hospital workflows.",
       },
       sections: [
         { id: "challenge", title: "The Challenge" },
         { id: "responsive", title: "Responsive Execution" },
-        { id: "architecture", title: "Component Architecture" },
-        { id: "impact", title: "Impact & Performance" }
       ],
       responsive: {
         desktop: {
           image: "/projects/careos-desktop-v3.png",
           label: "Desktop View",
-          description: "Full dashboard with sidebar navigation, patient queue, and detailed examination forms"
+          description:
+            "Full dashboard with sidebar navigation, patient queue, and detailed examination forms",
         },
         tablet: {
           image: "/projects/careos-tablet-v3.png",
           label: "Tablet View",
-          description: "Optimized for bedside use with larger touch targets and simplified navigation"
+          description:
+            "Optimized for bedside use with larger touch targets and simplified navigation",
         },
         mobile: {
           image: "/projects/careos-mobile-v3.png",
           label: "Mobile View",
-          description: "Quick access to patient alerts and pharmacy queue on the go"
-        }
+          description:
+            "Quick access to patient alerts and pharmacy queue on the go",
+        },
       },
       architecture: {
-        description: "Built with a modular PHP architecture, separating concerns between data access, business logic, and presentation layers. jQuery handles dynamic UI updates without full page reloads.",
+        description:
+          "Built with Next.js and React, transforming a legacy system into a modern, static-optimized frontend. UI styling is scoped using CSS Modules for predictable and maintainable designs.",
         features: [
-          "Modular page components for reusability",
-          "AJAX-powered dynamic content loading",
+          "Static Site Generation with Next.js",
+          "Scoped component styling with CSS Modules",
           "Session-based authentication with role permissions",
           "Real-time drug interaction checking",
-          "Responsive CSS Grid layout system"
+          "Responsive Flexbox and Grid layout system",
         ],
-        codeSnippet: `// Dynamic Patient Search with jQuery
-$('#patient-search').on('keyup', debounce(function() {
-  const query = $(this).val();
+        codeSnippet: `// React Component with CSS Modules
+import styles from './PatientSearch.module.css';
+import { useState } from 'react';
+
+export function PatientSearch({ onSearch }) {
+  const [query, setQuery] = useState('');
   
-  $.ajax({
-    url: '/api/patients/search',
-    data: { q: query },
-    success: function(patients) {
-      renderPatientList(patients);
-      highlightAllergyWarnings(patients);
-    }
-  });
-}, 300));`
+  const handleInput = (e) => {
+    setQuery(e.target.value);
+    onSearch(e.target.value);
+  };
+
+  return (
+    <div className={styles.searchContainer}>
+      <input 
+        type="text" 
+        className={styles.searchInput}
+        value={query}
+        onChange={handleInput} 
+        placeholder="ค้นหาผู้ป่วย..." 
+      />
+    </div>
+  );
+}`,
       },
       metrics: {
         performance: 85,
         accessibility: 92,
         bestPractices: 88,
-        seo: 90
-      }
+        seo: 90,
+      },
     },
     th: {
       slug: "careos",
       title: "CareOS",
       subtitle: "ระบบบริหารจัดการโรงพยาบาล",
-      description: "ระบบจัดการโรงพยาบาลครบวงจร รีดีไซน์จาก HOSxP ให้ทันสมัย ครอบคลุมเวชระเบียน ห้องตรวจ ระบบคิวยาพร้อมแจ้งเตือนอาการแพ้ และการเงิน",
+      description:
+        "ต้นแบบระบบจัดการโรงพยาบาลครบวงจร รีดีไซน์จาก HOSxP ให้ทันสมัย ครอบคลุมเวชระเบียน ห้องตรวจ ระบบคิวยาพร้อมแจ้งเตือนอาการแพ้ และการเงิน",
       heroImage: "/projects/careos-preview-v3.png",
-      tags: ["PHP", "jQuery", "HTML5", "CSS3", "MySQL"],
+      tags: ["Next.js", "React", "CSS Modules", "UI Refactor", "Responsive"],
       liveUrl: "http://localhost:8081",
       role: "Lead Frontend Developer",
       timeline: "ม.ค. 2025 – ปัจจุบัน",
-      coreStack: ["PHP", "jQuery", "HTML5", "CSS3", "MySQL", "Bootstrap"],
+      coreStack: ["Next.js", "React", "TypeScript", "CSS Modules"],
       challenge: {
         title: "ความท้าทาย",
-        content: "ระบบ HOSxP เดิมนั้นล้าสมัย ใช้งานยาก และไม่รองรับ Responsive Design บุคลากรทางการแพทย์ต้องเสียเวลามากในการใช้งาน Interface ที่ซับซ้อน ทำให้ประสิทธิภาพลดลงและอาจเกิดความผิดพลาดในการดูแลผู้ป่วย เป้าหมายของเราคือการออกแบบ UI/UX ใหม่ทั้งหมด โดยยังคงรักษาความถูกต้องของข้อมูลและความเข้ากันได้กับ Workflow ที่มีอยู่"
+        content:
+          "ระบบ HOSxP เดิมนั้นล้าสมัย ใช้งานยาก บุคลากรทางการแพทย์ต้องเสียเวลามากในการใช้งาน Interface ที่ซับซ้อน ทำให้ประสิทธิภาพลดลงและอาจเกิดความผิดพลาดในการดูแลผู้ป่วย เป้าหมายของเราคือการออกแบบ UI/UX ใหม่ทั้งหมด โดยยังคงรักษาความถูกต้องของข้อมูลและความเข้ากันได้กับ Workflow ที่มีอยู่",
       },
       sections: [
         { id: "challenge", title: "ความท้าทาย" },
         { id: "responsive", title: "การรองรับทุกหน้าจอ" },
-        { id: "architecture", title: "สถาปัตยกรรมระบบ" },
-        { id: "impact", title: "ผลลัพธ์และประสิทธิภาพ" }
       ],
       responsive: {
         desktop: {
           image: "/projects/careos-desktop-v3.png",
           label: "หน้าจอ Desktop",
-          description: "Dashboard เต็มรูปแบบพร้อม Sidebar navigation, คิวผู้ป่วย และฟอร์มตรวจโดยละเอียด"
+          description:
+            "Dashboard เต็มรูปแบบพร้อม Sidebar navigation, คิวผู้ป่วย และฟอร์มตรวจโดยละเอียด",
         },
         tablet: {
           image: "/projects/careos-tablet-v3.png",
           label: "หน้าจอ Tablet",
-          description: "ปรับให้เหมาะกับการใช้งานข้างเตียงผู้ป่วย มีปุ่มใหญ่และ Navigation ที่ง่ายขึ้น"
+          description:
+            "ปรับให้เหมาะกับการใช้งานข้างเตียงผู้ป่วย มีปุ่มใหญ่และ Navigation ที่ง่ายขึ้น",
         },
         mobile: {
           image: "/projects/careos-mobile-v3.png",
           label: "หน้าจอ Mobile",
-          description: "เข้าถึงการแจ้งเตือนผู้ป่วยและคิวยาได้อย่างรวดเร็วขณะเคลื่อนที่"
-        }
+          description:
+            "เข้าถึงการแจ้งเตือนผู้ป่วยและคิวยาได้อย่างรวดเร็วขณะเคลื่อนที่",
+        },
       },
       architecture: {
-        description: "สร้างด้วยสถาปัตยกรรม PHP แบบ modular แยกส่วนระหว่าง data access, business logic และ presentation อย่างชัดเจน jQuery จัดการการอัปเดต UI แบบ dynamic โดยไม่ต้อง reload หน้า",
+        description:
+          "สถาปัตยกรรมพัฒนาบน Next.js และ React โดยเปลี่ยนจากระบบเดิมที่เป็น Legacy ให้กลายเป็น Frontend ที่ทันสมัยและโหลดเร็วขึ้น ใช้ CSS Modules ในการจัดการ Style เพื่อป้องกันไม่ให้คลาสชนกัน",
         features: [
-          "Page components แบบ modular เพื่อการใช้ซ้ำ",
-          "โหลด content แบบ dynamic ด้วย AJAX",
+          "สร้างหน้าเว็บความเร็วสูงด้วยเทคโนโลยีของ Next.js",
+          "การจัดการคลาสแยกย่อยระดับ Component ด้วย CSS Modules",
           "ระบบ authentication ตาม session พร้อมสิทธิ์ตาม role",
           "ตรวจสอบปฏิกิริยายาแบบ real-time",
-          "ระบบ layout ด้วย Responsive CSS Grid"
+          "ระบบ layout ด้วย Responsive Flexbox และ Grid",
         ],
-        codeSnippet: `// Dynamic Patient Search with jQuery
-$('#patient-search').on('keyup', debounce(function() {
-  const query = $(this).val();
+        codeSnippet: `// React Component with CSS Modules
+import styles from './PatientSearch.module.css';
+import { useState } from 'react';
+
+export function PatientSearch({ onSearch }) {
+  const [query, setQuery] = useState('');
   
-  $.ajax({
-    url: '/api/patients/search',
-    data: { q: query },
-    success: function(patients) {
-      renderPatientList(patients);
-      highlightAllergyWarnings(patients);
-    }
-  });
-}, 300));`
+  const handleInput = (e) => {
+    setQuery(e.target.value);
+    onSearch(e.target.value);
+  };
+
+  return (
+    <div className={styles.searchContainer}>
+      <input 
+        type="text" 
+        className={styles.searchInput}
+        value={query}
+        onChange={handleInput} 
+        placeholder="ค้นหาผู้ป่วย..." 
+      />
+    </div>
+  );
+}`,
       },
       metrics: {
         performance: 85,
         accessibility: 92,
         bestPractices: 88,
-        seo: 90
-      }
-    }
+        seo: 90,
+      },
+    },
   },
   traffix: {
     en: {
       slug: "traffix",
       title: "Traffix",
-      subtitle: "Traffic Management System",
-      description: "Real-time traffic analytics and incident management system with a comprehensive custom Design System and UI Template gallery.",
+      subtitle: "LPR & Automated Gate Access System",
+      description:
+        "Advanced LPR (License Plate Recognition) system designed for automated premises access. Features membership/visitor verification and real-time session management for gate control at Channel 7.",
       heroImage: "/projects/traffix-preview.png",
-      tags: ["Next.js", "React", "Tailwind CSS", "Design System"],
+      tags: ["LPR", "OCR", "FastAPI", "Next.js", "IoT", "MQTT", "Real-time"],
       liveUrl: "http://localhost:3000",
-      role: "Frontend Developer",
+      role: "Full Stack Developer",
       timeline: "2026",
-      coreStack: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
+      coreStack: ["Next.js", "FastAPI", "PostgreSQL", "MQTT", "Redis"],
       challenge: {
         title: "The Challenge",
-        content: "Smart city infrastructure required a scalable, real-time dashboard for monitoring intersections and managing incidents. Furthermore, creating a unified developer experience required building a robust custom Design System (Traffix UI) with over 150 tokens and 25 components to ensure consistent user experiences across future applications."
+        content:
+          "Integrating high-speed OCR plate recognition with real-time membership databases and physical gate hardware (IoT). The system must handle high-volume traffic during peak hours at Channel 7 with near-zero latency for authentication and barrier control, ensuring smooth entry for authorized vehicles while maintaining security.",
       },
       sections: [
         { id: "challenge", title: "The Challenge" },
         { id: "responsive", title: "Responsive Execution" },
-        { id: "architecture", title: "Design System & Architecture" }
       ],
       responsive: {
         desktop: {
-          image: ["/projects/traffix-entry.png", "/projects/traffix-desktop.png"],
+          image: [
+            "/projects/traffix-entry.png",
+            "/projects/traffix-desktop.png",
+          ],
           label: "Entry Operations Dashboard",
-          description: "Real-time vehicle entry monitoring and gate control with live CCTV feeds."
+          description:
+            "Real-time vehicle entry monitoring and gate control with live CCTV feeds.",
         },
         tablet: {
           image: "/projects/traffix-tablet.png",
           label: "Tablet UI Templates",
-          description: "Responsive UI templates optimized for touch interactions on field devices."
+          description:
+            "Responsive UI templates optimized for touch interactions on field devices.",
         },
         mobile: {
           image: "/projects/traffix-mobile.png",
           label: "Mobile Incident Logs",
-          description: "Critical access logs and alerts formatted for on-the-go quick reading."
-        }
+          description:
+            "Critical access logs and alerts formatted for on-the-go quick reading.",
+        },
       },
       architecture: {
-        description: "Built with a token-based Design System foundation using Next.js and Tailwind CSS. The UI is completely modular, separating foundation tokens, utility classes, and business components.",
+        description:
+          "A robust full-stack architecture integrating IoT hardware and scalable data services. The frontend harnesses Next.js 15 and React 19 with a custom Tailwind 4 Design System, while the backend relies on FastAPI, Celery, and PostgreSQL. IoT communication is managed via Mosquitto and Node-RED.",
         features: [
-          "Custom Design System (Traffix UI) with 150+ tokens",
-          "Interactive UI Template Gallery with viewport testing",
-          "Real-time data visualization layouts",
-          "Comprehensive developer documentation",
-          "Light, Dark, and System theme support"
-        ]
-      }
+          "Frontend: Next.js 15 (React 19), Tailwind V4, Redux Toolkit, Zod",
+          "Backend: FastAPI (Python 3.11), SQLAlchemy 2, Celery",
+          "IoT & Real-time: Mosquitto MQTT, Node-RED, AIOMQTT",
+          "Infrastructure: PostgreSQL 15, Redis 7, MinIO",
+          "Data Procressing: Fuzzy Matching (Levenshtein)",
+        ],
+      },
     },
     th: {
       slug: "traffix",
       title: "Traffix",
-      subtitle: "ระบบบริหารจัดการจราจรอัจฉริยะ",
-      description: "ระบบบริหารจัดการจราจรและวิเคราะห์ข้อมูลแบบ Real-time พร้อม Design System ฉบับเต็มและ UI Template Gallery สำหรับนักพัฒนา",
+      subtitle: "ระบบอ่านป้ายทะเบียนและควบคุมประตูอัตโนมัติ",
+      description:
+        "ระบบอ่านป้ายทะเบียน (LPR) อัจฉริยะสำหรับควบคุมการเข้า-ออกอาคาร ตรวจสอบสมาชิกและผู้มาติดต่อ พร้อมระบบจัดการสถานะรถยนต์ (Session) และสั่งเปิดไม้กั้นอัตโนมัติสำหรับพื้นที่ช่อง 7",
       heroImage: "/projects/traffix-preview.png",
-      tags: ["Next.js", "React", "Tailwind CSS", "Design System"],
+      tags: ["LPR", "FastAPI", "Next.js", "IoT", "MQTT", "Real-time"],
       liveUrl: "http://localhost:3000",
-      role: "Frontend Developer",
+      role: "Full Stack Developer",
       timeline: "ปี 2026",
-      coreStack: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
+      coreStack: ["Next.js", "FastAPI", "PostgreSQL", "MQTT", "Redis"],
       challenge: {
         title: "ความท้าทาย",
-        content: "โครงสร้างพื้นฐานของ Smart City ต้องการ Dashboard ที่สามารถติดตามทางแยกและจัดการอุบัติเหตุได้แบบ Real-time นอกจากนี้ เพื่อให้ประสบการณ์ของนักพัฒนาเป็นไปในทิศทางเดียวกัน เราจึงต้องสร้าง Design System (Traffix UI) ที่มี Token มากกว่า 150 ตัวและ Component กว่า 25 แบบ เพื่อควบคุมมาตรฐาน UI ของแอปพลิเคชันในอนาคตทั้งหมด"
+        content:
+          "การเชื่อมต่อระบบประมวลผลวิดีโอ (OCR) ความเร็วสูงเข้ากับฐานข้อมูลสมาชิกและฮาร์ดแวร์ประตู (IoT) แบบ Real-time เพื่อรองรับการจราจรในช่วงเร่งด่วนของสถานีโทรทัศน์ช่อง 7 โดยต้องมีความแม่นยำสูงสุดในการระบุป้ายทะเบียนและสั่งการไม้กั้นแบบไร้ความหน่วง เพื่อความสะดวกและปลอดภัยของพื้นที่",
       },
       sections: [
         { id: "challenge", title: "ความท้าทาย" },
         { id: "responsive", title: "การรองรับทุกหน้าจอ" },
-        { id: "architecture", title: "ระบบ Design System" }
       ],
       responsive: {
         desktop: {
-          image: ["/projects/traffix-entry.png", "/projects/traffix-desktop.png"],
+          image: [
+            "/projects/traffix-entry.png",
+            "/projects/traffix-desktop.png",
+          ],
           label: "หน้า Dashboard ควบคุมการเข้า-ออก",
-          description: "ระบบจัดการประตูทางเข้าพร้อมภาพจากกล้องวงจรปิดแบบสด และการลงทะเบียนยานพาหนะ"
+          description:
+            "ระบบจัดการประตูทางเข้าพร้อมภาพจากกล้องวงจรปิดแบบสด และการลงทะเบียนยานพาหนะ",
         },
         tablet: {
           image: "/projects/traffix-tablet.png",
           label: "หน้าเว็บสำหรับแท็บเล็ต",
-          description: "UI Template ที่ปรับเปลี่ยนขนาดรองรับการสัมผัส (Touch) เหมาะสำหรับการใช้งานภาคสนาม"
+          description:
+            "UI Template ที่ปรับเปลี่ยนขนาดรองรับการสัมผัส (Touch) เหมาะสำหรับการใช้งานภาคสนาม",
         },
         mobile: {
           image: "/projects/traffix-mobile.png",
           label: "หน้าจอมือถือ",
-          description: "กระชับและเข้าถึงง่าย ขอดูประวัติการตรวจจับได้รวดเร็ว เหมาะกับเจ้าหน้าที่ใช้งานขณะตั้งด่าน"
-        }
+          description:
+            "กระชับและเข้าถึงง่าย ขอดูประวัติการตรวจจับได้รวดเร็ว เหมาะกับเจ้าหน้าที่ใช้งานขณะตั้งด่าน",
+        },
       },
       architecture: {
-        description: "พัฒนาระบบบนโครงสร้างแบบ Token-based ด้วย Next.js และ Tailwind CSS โดยแยกส่วนข้อมูลเชิง Foundation, Utilities และ Components ออกจากกันอย่างชัดเจน",
+        description:
+          "สถาปัตยกรรม Full-stack รอบรับ IoT และระบบข้อมูลแบบ Real-time ขนาดใหญ่ ฝั่ง Frontend ใช้ Next.js 15 (React 19) ร่วมกับ Tailwind 4 ฝั่ง Backend เป็น FastAPI และการจัดการ Background Tasks ด้วย Celery การสื่อสารระดับฮาร์ดแวร์ใช้ Mosquitto และ Node-RED",
         features: [
-          "ระบบ Design System (Traffix UI) แบบ Custom พร้อม Token 150+ รายการ",
-          "หน้า UI Template Gallery แบบ Interactive สำหรับทดสอบ Viewport",
-          "โครงสร้างการแสดงผลข้อมูลแบบ Real-time",
-          "เอกสารคู่มือสำหรับนักพัฒนาแบบครบถ้วนตามมาตรฐาน",
-          "รองรับโหมดสีแบบ Light, Dark และ System"
-        ]
-      }
-    }
+          "Frontend: Next.js 15 (React 19), Tailwind V4, Redux Toolkit, Zod",
+          "Backend: FastAPI (Python 3.11), SQLAlchemy 2, Celery",
+          "IoT & Real-time: Mosquitto MQTT Broker, Node-RED, AIOMQTT",
+          "Infrastructure: Docker Compose, PostgreSQL 15, Redis 7, MinIO",
+          "Data Processing: เทียบค่าความเหมือนป้ายทะเบียนด้วย Levenshtein",
+        ],
+      },
+    },
   },
   "banthi-hospital": {
     en: {
       slug: "banthi-hospital",
       title: "Banthi Hospital",
       subtitle: "Official Hospital Website",
-      description: "A modern, accessible, and responsive official website for Banthi Hospital, Lamphun. Featuring patient services, doctor schedules, and hospital news.",
+      description:
+        "A modern, accessible, and responsive official website for Banthi Hospital, Lamphun. Featuring patient services, doctor schedules, and hospital news.",
       heroImage: "/projects/banthi-hospital-desktop.png",
-      tags: ["WordPress", "PHP", "Responsive", "Accessible"],
+      tags: ["HTML5", "CSS3", "Vanilla JS", "PHP", "Responsive"],
       liveUrl: "http://localhost:8082",
-      role: "Web Developer",
+      role: "Frontend & Backend Developer",
       timeline: "2024",
-      coreStack: ["PHP", "JavaScript", "HTML5", "CSS3", "MySQL"],
+      coreStack: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"],
       challenge: {
         title: "The Challenge",
-        content: "The hospital needed a digital presence that is accessible to all demographics, particularly the elderly. The website had to be fast, easy to navigate, and clearly display essential information like operating hours and department contacts."
+        content:
+          "The hospital needed a digital presence that is accessible to all demographics, particularly the elderly. The website had to be fast, easy to navigate, and clearly display essential information like operating hours and department contacts.",
       },
       sections: [
         { id: "challenge", title: "The Challenge" },
         { id: "responsive", title: "Responsive Execution" },
-        { id: "metrics", title: "Impact & Performance" }
       ],
       responsive: {
         desktop: {
           image: "/projects/banthi-hospital-desktop.png",
           label: "Desktop View",
-          description: "Clear navigation and prominent calls-to-action for essential hospital services"
+          description:
+            "Clear navigation and prominent calls-to-action for essential hospital services",
         },
         tablet: {
           image: "/projects/banthi-hospital-tablet.png",
           label: "Tablet View",
-          description: "Optimized layout for reading news and viewing schedules on touch devices"
+          description:
+            "Optimized layout for reading news and viewing schedules on touch devices",
         },
         mobile: {
           image: "/projects/banthi-hospital-mobile.png",
           label: "Mobile View",
-          description: "Quick access to emergency contacts and directions for on-the-go users"
-        }
+          description:
+            "Quick access to emergency contacts and directions for on-the-go users",
+        },
       },
       metrics: {
-        performance: 90,
-        accessibility: 95,
-        bestPractices: 85,
-        seo: 92
-      }
+        performance: 92,
+        accessibility: 98,
+        bestPractices: 90,
+        seo: 95,
+      },
     },
     th: {
       slug: "banthi-hospital",
       title: "โรงพยาบาลบ้านธิ",
       subtitle: "เว็บไซต์หลักโรงพยาบาล",
-      description: "เว็บไซต์หลักอย่างเป็นทางการของโรงพยาบาลบ้านธิ จังหวัดลำพูน ที่ทันสมัย รองรับการใช้งานทุกอุปกรณ์ และเข้าถึงง่าย อัดแน่นด้วยบริการสำหรับผู้ป่วย ตารางตรวจของแพทย์ และข่าวสารโรงพยาบาล",
+      description:
+        "เว็บไซต์หลักอย่างเป็นทางการของโรงพยาบาลบ้านธิ จังหวัดลำพูน ที่ทันสมัย รองรับการใช้งานทุกอุปกรณ์ และเข้าถึงง่าย อัดแน่นด้วยบริการสำหรับผู้ป่วย ตารางตรวจของแพทย์ และข่าวสารโรงพยาบาล",
       heroImage: "/projects/banthi-hospital-desktop.png",
-      tags: ["WordPress", "PHP", "Responsive", "Accessible"],
+      tags: ["HTML5", "CSS3", "Vanilla JS", "PHP", "Responsive"],
       liveUrl: "http://localhost:8082",
-      role: "Web Developer",
+      role: "Frontend & Backend Developer",
       timeline: "ปี 2024",
-      coreStack: ["PHP", "JavaScript", "HTML5", "CSS3", "MySQL"],
+      coreStack: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"],
       challenge: {
         title: "ความท้าทาย",
-        content: "โรงพยาบาลต้องการตัวตนบนโลกออนไลน์ที่สามารถเข้าถึงได้โดยทุกกลุ่มคน โดยเฉพาะผู้สูงอายุ เว็บไซต์ต้องโหลดเร็ว นำทางง่าย และแสดงข้อมูลที่จำเป็น เช่น เวลาทำการ และวิธีการติดต่อแผนกต่างๆ ได้อย่างชัดเจน"
+        content:
+          "โรงพยาบาลต้องการตัวตนบนโลกออนไลน์ที่สามารถเข้าถึงได้โดยทุกกลุ่มคน โดยเฉพาะผู้สูงอายุ เว็บไซต์ต้องโหลดเร็ว นำทางง่าย และแสดงข้อมูลที่จำเป็น เช่น เวลาทำการ และวิธีการติดต่อแผนกต่างๆ ได้อย่างชัดเจน",
       },
       sections: [
         { id: "challenge", title: "ความท้าทาย" },
         { id: "responsive", title: "การรองรับทุกหน้าจอ" },
-        { id: "metrics", title: "ผลลัพธ์และประสิทธิภาพ" }
       ],
       responsive: {
         desktop: {
           image: "/projects/banthi-hospital-desktop.png",
           label: "หน้าจอ Desktop",
-          description: "มีเมนูนำทางที่ชัดเจนและปุ่มกดที่โดดเด่นเพื่อเข้าถึงบริการสำคัญของโรงพยาบาล"
+          description:
+            "มีเมนูนำทางที่ชัดเจนและปุ่มกดที่โดดเด่นเพื่อเข้าถึงบริการสำคัญของโรงพยาบาล",
         },
         tablet: {
           image: "/projects/banthi-hospital-tablet.png",
           label: "หน้าจอ Tablet",
-          description: "ปรับรูปแบบการจัดวางให้อ่านข่าวสารและดูตารางตรวจบนอุปกรณ์สัมผัสได้ดีขึ้น"
+          description:
+            "ปรับรูปแบบการจัดวางให้อ่านข่าวสารและดูตารางตรวจบนอุปกรณ์สัมผัสได้ดีขึ้น",
         },
         mobile: {
           image: "/projects/banthi-hospital-mobile.png",
           label: "หน้าจอ Mobile",
-          description: "เข้าถึงเบอร์ติดต่อฉุกเฉินและแผนที่ได้อย่างรวดเร็วสำหรับผู้ใช้งานผ่านมือถือ"
-        }
+          description:
+            "เข้าถึงเบอร์ติดต่อฉุกเฉินและแผนที่ได้อย่างรวดเร็วสำหรับผู้ใช้งานผ่านมือถือ",
+        },
       },
       metrics: {
-        performance: 90,
-        accessibility: 95,
-        bestPractices: 85,
-        seo: 92
-      }
-    }
+        performance: 92,
+        accessibility: 98,
+        bestPractices: 90,
+        seo: 95,
+      },
+    },
   },
   ch7election: {
     en: {
       slug: "ch7election",
       title: "CH7 Election 2026",
       subtitle: "Official Election Visualization",
-      description: "Developed the responsive UI for Thailand's 2026 Election real-time results, featuring an interactive Hexagon map representing constituencies.",
+      description:
+        "Developed the responsive UI for Thailand's 2026 Election real-time results, featuring an interactive Hexagon map representing constituencies.",
       heroImage: "/projects/ch7-election-preview.png",
-      tags: ["React", "TypeScript", "Tailwind CSS"],
+      tags: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "D3.js",
+        "Design Token",
+        "Atomic Design",
+        "Responsive",
+        "Real-time",
+      ],
       liveUrl: "https://www.ch7.com/election2569/results/constituency",
       role: "Frontend Developer (UI/Map)",
       timeline: "2026",
-      coreStack: ["React", "TypeScript", "Tailwind CSS"],
+      coreStack: ["Next.js", "TypeScript", "Tailwind CSS", "D3.js"],
       challenge: {
         title: "The Challenge",
-        content: "The goal was to visualize complex, real-time election data intuitively for a massive audience during a major event. A key challenge was rendering the 400 constituency seats as an interactive hexagon map that remains performant and responsive across desktop, tablet, and mobile devices."
+        content:
+          "The goal was to visualize complex, real-time election data intuitively for a massive audience during a major event. A key challenge was rendering the 400 constituency seats as an interactive hexagon map that remains performant and responsive across desktop, tablet, and mobile devices.",
       },
       sections: [
         { id: "challenge", title: "The Challenge" },
-        { id: "responsive", title: "Responsive Execution" }
+        { id: "responsive", title: "Responsive Execution" },
       ],
       responsive: {
         desktop: {
           image: "/projects/ch7-election-preview.png",
           label: "Desktop View",
-          description: "Full parliament hexagon map with real-time party leaderboard on the side."
+          description:
+            "Full parliament hexagon map with real-time party leaderboard on the side.",
         },
         tablet: {
           image: "/projects/ch7-election-tablet.png",
           label: "Tablet View",
-          description: "Adjusted layout to maintain hexagon readability while stacking the leaderboard."
+          description:
+            "Adjusted layout to maintain hexagon readability while stacking the leaderboard.",
         },
         mobile: {
           image: "/projects/ch7-election-mobile.png",
           label: "Mobile View",
-          description: "Optimized mobile experience tailored for fast, on-the-go results updates."
-        }
-      }
+          description:
+            "Optimized mobile experience tailored for fast, on-the-go results updates.",
+        },
+      },
     },
     th: {
       slug: "ch7election",
       title: "เลือกตั้ง 69 อนาคตประเทศไทย",
       subtitle: "ระบบรายงานผลแบบเวลาจริง",
-      description: "พัฒนา UI แผนที่รังผึ้ง (Hexagon Map) สำหรับรายงานผลการเลือกตั้งปี 2569 พร้อมรองรับ Responsive",
+      description:
+        "พัฒนา UI แผนที่รังผึ้ง (Hexagon Map) สำหรับรายงานผลการเลือกตั้งปี 2569 พร้อมรองรับ Responsive",
       heroImage: "/projects/ch7-election-preview.png",
-      tags: ["React", "TypeScript", "Tailwind CSS"],
+      tags: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "D3.js",
+        "Design Token",
+        "Atomic Design",
+        "Responsive",
+        "Real-time",
+      ],
       liveUrl: "https://www.ch7.com/election2569/results/constituency",
       role: "Frontend Developer (ส่วน UI)",
       timeline: "ปี 2026",
-      coreStack: ["React", "TypeScript", "Tailwind CSS"],
+      coreStack: ["Next.js", "TypeScript", "Tailwind CSS", "D3.js"],
       challenge: {
         title: "ความท้าทาย",
-        content: "เป้าหมายหลักคือการนำเสนอข้อมูลผลการนับคะแนนที่ซับซ้อนให้ผู้ชมเข้าใจได้ง่ายแบบเรียลไทม์ ความท้าทายสำคัญคือการทำ UI รูปหกเหลี่ยมแสดงถึง ส.ส. ทั้ง 400 เขตให้ทำงานได้ลื่นไหล ไม่กระตุก และแสดงผลได้อย่างสมบูรณ์ในทุกขนาดหน้าจอ ทั้งคอมพิวเตอร์และมือถือ"
+        content:
+          "เป้าหมายหลักคือการนำเสนอข้อมูลผลการนับคะแนนที่ซับซ้อนให้ผู้ชมเข้าใจได้ง่ายแบบเรียลไทม์ ความท้าทายสำคัญคือการทำ UI รูปหกเหลี่ยมแสดงถึง ส.ส. ทั้ง 400 เขตให้ทำงานได้ลื่นไหล ไม่กระตุก และแสดงผลได้อย่างสมบูรณ์ในทุกขนาดหน้าจอ ทั้งคอมพิวเตอร์และมือถือ",
       },
       sections: [
         { id: "challenge", title: "ความท้าทาย" },
-        { id: "responsive", title: "การรองรับทุกหน้าจอ" }
+        { id: "responsive", title: "การรองรับทุกหน้าจอ" },
       ],
       responsive: {
         desktop: {
           image: "/projects/ch7-election-preview.png",
           label: "หน้าจอ Desktop",
-          description: "แสดงแผนที่สภาแบบเต็มรูปแบบ พร้อมตารางสรุปคะแนนของแต่ละพรรคการเมือง"
+          description:
+            "แสดงแผนที่สภาแบบเต็มรูปแบบ พร้อมตารางสรุปคะแนนของแต่ละพรรคการเมือง",
         },
         tablet: {
           image: "/projects/ch7-election-tablet.png",
           label: "หน้าจอ Tablet",
-          description: "ปรับรูปแบบเพื่อให้อ่านข้อมูลจากหกเหลี่ยมได้ชัดเจน"
+          description: "ปรับรูปแบบเพื่อให้อ่านข้อมูลจากหกเหลี่ยมได้ชัดเจน",
         },
         mobile: {
           image: "/projects/ch7-election-mobile.png",
           label: "หน้าจอ Mobile",
-          description: "หน้าจอขนาดเล็กที่ออกแบบมาให้ดูผลคะแนนแบบฉับไวระหว่างการเดินทาง"
-        }
-      }
-    }
-  }
+          description:
+            "หน้าจอขนาดเล็กที่ออกแบบมาให้ดูผลคะแนนแบบฉับไวระหว่างการเดินทาง",
+        },
+      },
+    },
+  },
 };
 
-export function getProject(slug: string, lang: 'en' | 'th'): ProjectData | undefined {
+export function getProject(
+  slug: string,
+  lang: "en" | "th",
+): ProjectData | undefined {
   return projects[slug]?.[lang];
 }
 

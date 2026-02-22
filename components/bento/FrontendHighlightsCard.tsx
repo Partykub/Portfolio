@@ -47,7 +47,7 @@ export function TechnicalExpertiseCard() {
                 {items.map((item, idx) => (
                     <div
                         key={idx}
-                        className={`group relative p-6 rounded-2xl border border-border bg-card hover:bg-card transition-all duration-300 hover:scale-[1.02] hover:shadow-xl ${item.border} flex flex-col justify-between h-full`}
+                        className={`group relative p-6 rounded-2xl border border-border bg-card hover:bg-card transition-all duration-300 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-xl ${item.border} flex flex-col justify-between h-full`}
                     >
                         {/* Decorative Gradient Background */}
                         <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br ${item.gradient} rounded-2xl -z-10`} />

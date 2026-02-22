@@ -22,7 +22,7 @@ const deviceIcons = {
 
 export function ResponsiveShowcase({
   project,
-  title = "Responsive Execution"
+  title = "Responsive Execution",
 }: ResponsiveShowcaseProps) {
   const [activeDevice, setActiveDevice] = useState<DeviceType>("desktop");
 
@@ -31,19 +31,19 @@ export function ResponsiveShowcase({
   const devices: DeviceType[] = ["desktop", "tablet", "mobile"];
 
   return (
-    <section id="responsive" className="py-16 md:py-24">
+    <section id="responsive" className="py-12 sm:py-16 md:py-24">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6 sm:mb-8">
           {title}
         </h2>
 
         {/* Device Tab Switcher */}
-        <div className="flex gap-2 mb-8 p-1 bg-muted rounded-lg w-fit">
+        <div className="flex gap-1 sm:gap-2 mb-6 sm:mb-8 p-1 bg-muted rounded-lg w-full sm:w-fit overflow-x-auto">
           {devices.map((device) => {
             const Icon = deviceIcons[device];
             const isActive = activeDevice === device;
@@ -53,14 +53,16 @@ export function ResponsiveShowcase({
                 key={device}
                 onClick={() => setActiveDevice(device)}
                 className={cn(
-                  "flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all",
+                  "flex items-center justify-center gap-2 px-3 sm:px-4 py-2 rounded-md text-xs sm:text-sm font-medium transition-all flex-1 sm:flex-initial whitespace-nowrap",
                   isActive
                     ? "bg-background text-foreground shadow-sm"
-                    : "text-muted-foreground hover:text-foreground"
+                    : "text-muted-foreground hover:text-foreground",
                 )}
               >
-                <Icon className="w-4 h-4" />
-                <span className="capitalize">{device}</span>
+                <Icon className="w-4 h-4 flex-shrink-0" />
+                <span className="capitalize hidden xs:inline sm:inline">
+                  {device}
+                </span>
               </button>
             );
           })}
@@ -77,35 +79,37 @@ export function ResponsiveShowcase({
             className="space-y-4"
           >
             {/* Image Container(s) */}
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-6 sm:gap-8">
               {(Array.isArray(project.responsive[activeDevice].image)
                 ? (project.responsive[activeDevice].image as string[])
-                : [project.responsive[activeDevice].image as string]).map((imgSrc, idx) => (
-                  <div
-                    key={idx}
-                    className={cn(
-                      "relative mx-auto w-full overflow-hidden rounded-xl border border-border bg-card shadow-lg",
-                      activeDevice === "desktop" && "max-w-4xl aspect-video",
-                      activeDevice === "tablet" && "max-w-md aspect-[3/4]",
-                      activeDevice === "mobile" && "max-w-xs aspect-[9/16]"
-                    )}
-                  >
-                    <Image
-                      src={imgSrc}
-                      alt={`${project.responsive![activeDevice].label} - View ${idx + 1}`}
-                      fill
-                      className="object-cover object-top"
-                    />
-                  </div>
-                ))}
+                : [project.responsive[activeDevice].image as string]
+              ).map((imgSrc, idx) => (
+                <div
+                  key={idx}
+                  className={cn(
+                    "relative mx-auto w-full overflow-hidden rounded-lg sm:rounded-xl border border-border bg-card shadow-lg",
+                    activeDevice === "desktop" && "max-w-4xl aspect-video",
+                    activeDevice === "tablet" && "max-w-md aspect-[3/4]",
+                    activeDevice === "mobile" &&
+                      "max-w-[280px] sm:max-w-xs aspect-[9/16]",
+                  )}
+                >
+                  <Image
+                    src={imgSrc}
+                    alt={`${project.responsive![activeDevice].label} - View ${idx + 1}`}
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+              ))}
             </div>
 
             {/* Label & Description */}
-            <div className="text-center max-w-xl mx-auto">
-              <h3 className="text-lg font-semibold text-foreground">
+            <div className="text-center max-w-xl mx-auto px-4">
+              <h3 className="text-base sm:text-lg font-semibold text-foreground">
                 {project.responsive[activeDevice].label}
               </h3>
-              <p className="text-muted-foreground mt-1">
+              <p className="text-sm sm:text-base text-muted-foreground mt-1">
                 {project.responsive[activeDevice].description}
               </p>
             </div>

@@ -9,32 +9,32 @@ interface ArchitectureSectionProps {
   title?: string;
 }
 
-export function ArchitectureSection({ 
-  project, 
-  title = "Component Architecture" 
+export function ArchitectureSection({
+  project,
+  title = "Component Architecture",
 }: ArchitectureSectionProps) {
   if (!project.architecture) return null;
 
   return (
-    <section id="architecture" className="py-16 md:py-24">
+    <section id="architecture" className="py-12 sm:py-16 md:py-24">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6 sm:mb-8">
           {title}
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
           {/* Left: Description + Features */}
-          <div className="space-y-6">
-            <p className="text-muted-foreground leading-relaxed">
+          <div className="space-y-4 sm:space-y-6">
+            <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
               {project.architecture.description}
             </p>
 
-            <ul className="space-y-3">
+            <ul className="space-y-2.5 sm:space-y-3">
               {project.architecture.features.map((feature, index) => (
                 <motion.li
                   key={index}
@@ -42,12 +42,14 @@ export function ArchitectureSection({
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
-                  className="flex items-start gap-3"
+                  className="flex items-start gap-2.5 sm:gap-3"
                 >
                   <span className="flex-shrink-0 w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center mt-0.5">
                     <Check className="w-3 h-3 text-green-500" />
                   </span>
-                  <span className="text-foreground">{feature}</span>
+                  <span className="text-sm sm:text-base text-foreground">
+                    {feature}
+                  </span>
                 </motion.li>
               ))}
             </ul>
@@ -70,9 +72,9 @@ export function ArchitectureSection({
                   <div className="w-3 h-3 rounded-full bg-green-500/80" />
                   <span className="ml-2 text-xs text-zinc-500">code.js</span>
                 </div>
-                
+
                 {/* Code content */}
-                <pre className="p-4 overflow-x-auto text-sm">
+                <pre className="p-3 sm:p-4 overflow-x-auto text-xs sm:text-sm">
                   <code className="text-zinc-300 font-mono whitespace-pre">
                     {project.architecture.codeSnippet}
                   </code>
